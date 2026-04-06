@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "Brice";
+  src: url("../assets/Brice/Brice-Black.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #cfcdc8;
+}
+
+.hvem-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 4rem 0;
+  background: #cfcdc8;
+}
+
+.hvem-intro {
+  text-align: left;
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+
+.hvem-eyebrow {
+  margin: 0 0 1rem;
+  color: #6d1b13;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hvem-heading {
+  margin: 0 0 1.5rem;
+  color: #6d1b13;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  line-height: 0.95;
+  font-weight: 600;
+  max-width: 25ch;
+}
+
+.hvem-text {
+  margin: 0;
+  max-width: 80ch;
+  color: #6d1b13;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.team-grid {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+
+@media (max-width: 900px) {
+  .hvem-container {
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .hvem-intro {
+    margin-bottom: 3.5rem;
+  }
+
+  .hvem-heading {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 10vw, 4rem);
+  }
+
+  .hvem-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
