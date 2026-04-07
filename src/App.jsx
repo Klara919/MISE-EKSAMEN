@@ -29,6 +29,8 @@ function App() {
         {/* DISSE MANGLEDE */}
         <Route path="/menu1" element={<Menu1 />} />
         <Route path="/menu2" element={<Menu2 />} />
+
+        <Route path="/kontakt" element={<Kontakt />} />
       </Routes>
     </>
   );

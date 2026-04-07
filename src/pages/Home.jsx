@@ -4,6 +4,7 @@ import Cases from "../components/Cases";
 import WhiteFooter from "../components/WhiteFooter";
 import TestimonialSection from "../components/TestimonialSection";
 import IntroSection from "../components/IntroSection";
+import CTA from "../components/CTA";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <ProcessBox />
       <Cases />
       <TestimonialSection />
+      <CTA/>
       <WhiteFooter />
     </main>
   );
