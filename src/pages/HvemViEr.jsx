@@ -2,7 +2,7 @@ import React from "react";
 import "./HvemViEr.css";
 
 import TeamCard from "../components/TeamCard";
-import Footer from "../components/RedFooter";
+import RedFooter from "../components/RedFooter";
 import SideBrand from "../components/SideBrand";
 
 import emilImage from "../assets/emil.svg";
@@ -69,7 +69,7 @@ export default function HvemViEr() {
         </section>
       </main>
 
-      <Footer />
+      <RedFooter />
     </div>
   );
 }

@@ -58,10 +58,10 @@ function FooterColumn({ title, items }) {
 }
 
 // Hoved Footer komponent
-export default function Footer() {
+export default function RedFooter() {
   return (
     // Selve footeren
-    <footer className="footer">
+<footer className="red-footer">
       <div className="footer-inner"> {/* Wrapper for layout */}
         
         {/* Navigation område med kolonner */}
