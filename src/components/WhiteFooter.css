@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Brice";
-  src: url("../assets/Brice/Brice-Black.otf") format("opentype");
+  src: url("../assets/FONT/Brice-Black.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
@@ -49,17 +49,21 @@
   margin-bottom: 5px;
 }
 
-.footer-link {
+
+.footer a{
+  color: #ffffff;
+  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5;
   text-decoration: none;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
-  color: #ffffff;
 }
 
-.footer-link:hover {
+.footer-link:hover,
+.footer-link:focus-visible {
   opacity: 0.7;
+  color: #ffffff;
 }
 
 

@@ -6,12 +6,26 @@ body,
   height: 100%;
 }
 
+/* GLOBAL PAGE STYLES */
+.page {
+  min-height: 100vh;
+}
+
+.page--dark {
+  background-color: #454642;
+}
+
+.page--light {
+  background-color: #cfcdc8;
+}
+
+body {
+  background: #454642;
+}
+
+/* reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-body {
-  background: #cfcdc8;
 }

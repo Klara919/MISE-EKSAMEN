@@ -1,0 +1,69 @@
+.cta {
+ background-color: #4a4a46;
+ color: white;
+ padding: 80px 0;
+}
+
+
+/* Samme container som resten af siden */
+.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 40px;
+}
+
+
+.cta-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 40px;
+}
+
+
+.cta-text {
+ max-width: 700px;
+}
+
+
+.cta-text h2 {
+ font-size: 42px;
+ margin-bottom: 20px;
+ font-weight: 550;
+ letter-spacing: 1px;
+}
+
+
+.cta-text p {
+ font-size: 14px;
+ line-height: 1.6;
+ margin-bottom: 20px;
+}
+
+
+.cta-text button {
+ background-color: #6b6b64;
+ color: white;
+ border: none;
+ padding: 12px 24px;
+ cursor: pointer;
+}
+
+
+.cta-image img {
+ width: 320px;
+}
+
+
+/* Mobil */
+@media (max-width: 768px) {
+ .cta-container {
+   flex-direction: column;
+   align-items: flex-start;
+ }
+
+
+ .cta-image img {
+   display: none;
+ }
+}

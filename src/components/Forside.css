@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: "Brice";
+  src: url("../assets/FONT/Brice-Black.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+.hero-section {
+  padding: 80px 40px 40px;
+    margin: 0;
+  background-color: #454642;
+}
+
+.hero-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+
+}
+
+.hero-images {
+  display: flex;
+  width: 100%;
+  height: 590px;
+
+}
+.hero-left,
+.hero-right {
+  width: 50%;
+  position: relative;
+}
+
+.hero-left img,
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*  Tekst */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hero-content h1 {
+  color: white;
+  line-height: 0.55;
+  font-size: 101px;
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  text-align: right;
+}
+
+.hero-content p {
+  margin-top: 40px;
+  margin-left: auto;
+  padding-right: 10px;
+  width: fit-content;
+  font-family: "montserrat", sans-serif;
+  font-size: 24px;
+  color: white;
+  text-align: right;
+}
+
+/*  Tekst animation */
+.text-enter {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.4s ease;
+}
+
+.text-exit {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: 0.4s ease;
+}
+
+/* =========================
+   INTRO OVERLAY
+========================= */
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/*  Døre */
+.door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background:  #2f312e;
+  transition: transform 1.6s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.door-left {
+  left: 0;
+}
+
+.door-right {
+  right: 0;
+}
+
+.intro-overlay.open .door-left {
+  transform: translateX(-100%);
+}
+
+.intro-overlay.open .door-right {
+  transform: translateX(100%);
+}
+
+/*  Logo + tekst */
+.intro-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  text-align: center;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.intro-logo {
+  width: clamp(300px, 38vw, 650px);
+  height: auto;
+}
+.intro-text p {
+  font-family: "montserrat", sans-serif;
+  font-size: clamp(14px, 2vw, 24px);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* fade ud når dørene åbner */
+.intro-text.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+.hero-section {
+    padding: 50px 24px 24px;
+  }
+
+  .hero-images {
+    height: 440px;
+  }
+
+  .hero-content h1 {
+    font-size: 72px;
+  }
+
+  .hero-content p {
+    font-size: 20px;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+ .hero-section {
+    padding: 40px 16px 16px;
+  }
+
+  .hero-images {
+    height: 300px;
+  }
+  .intro-text {
+    justify-content: flex-start;
+    margin-top: 100px;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+}

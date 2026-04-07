@@ -1,5 +1,6 @@
 import React from "react";
 import "./HvemViEr.css";
+
 import TeamCard from "../components/TeamCard";
 import Footer from "../components/RedFooter";
 import SideBrand from "../components/SideBrand";
@@ -8,6 +9,7 @@ import emilImage from "../assets/emil.svg";
 import klaraImage from "../assets/klara.svg";
 import julieImage from "../assets/julie.svg";
 import natImage from "../assets/nat.svg";
+
 
 export default function HvemViEr() {
   return (
