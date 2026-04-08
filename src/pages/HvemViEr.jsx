@@ -5,10 +5,10 @@ import TeamCard from "../components/TeamCard";
 import RedFooter from "../components/RedFooter";
 import SideBrand from "../components/SideBrand";
 
-import emilImage from "../assets/emil.svg";
-import klaraImage from "../assets/klara.svg";
-import julieImage from "../assets/julie.svg";
-import natImage from "../assets/nat.svg";
+import emilImage from "../assets/Portrætter/emil.webp";
+import klaraImage from "../assets/Portrætter/klara.webp";
+import julieImage from "../assets/Portrætter/julie.webp";
+import natImage from "../assets/Portrætter/nat.webp";
 
 
 export default function HvemViEr() {

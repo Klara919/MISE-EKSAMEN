@@ -2,7 +2,7 @@ import React from "react";
 import "./Kontakt.css";
 import SideBrand from "../components/SideBrand";
 import Footer from "../components/RedFooter";
-import kontaktImage from "../assets/kontakt-image.svg";
+import kontaktImage from "../assets/bord.svg";
 
 
 const contactContent = {
