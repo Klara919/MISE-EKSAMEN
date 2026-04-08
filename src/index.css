@@ -32,15 +32,14 @@ body {
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/FONT/Montserrat/Montserrat-VariableFont_wght.ttf") format("opentype");
-  font-weight: 400;
+  src: url("../assets/FONT/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
 }
 
-
 @font-face {
   font-family: "Brice";
-  src: url("../assets/FONT/Brice-Black.otf") format("opentype");
-  font-weight: 400;
+  src: url("./assets/FONT/Brice-Black.otf") format("opentype");
+  font-weight: 900;
   font-style: normal;
 }
