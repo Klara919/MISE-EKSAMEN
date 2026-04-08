@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./IntroSection.css";
-import Team from "../assets/team.jpg";
+import Team from "../assets/Team.jpg";
 
 export default function IntroSection() {
   return (
