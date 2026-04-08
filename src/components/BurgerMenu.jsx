@@ -9,8 +9,8 @@ function BurgerMenu() {
       { label: "Forside", to: "/" },
     { label: "Services", to: "/services" },
     { label: "Cases", to: "/cases" },
-    { label: "Kontakt", to: "/kontakt" },
     { label: "Hvem vi er", to: "/hvem-vi-er" },
+    { label: "Kontakt", to: "/kontakt" },
   ];
 
   const toggleMenu = () => {
