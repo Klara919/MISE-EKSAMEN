@@ -6,7 +6,7 @@ function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-      { label: "Forside", to: "/" },
+    { label: "Forside", to: "/" },
     { label: "Services", to: "/services" },
     { label: "Cases", to: "/cases" },
     { label: "Hvem vi er", to: "/hvem-vi-er" },
