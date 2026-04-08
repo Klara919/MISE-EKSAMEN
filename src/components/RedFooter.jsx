@@ -16,10 +16,11 @@ const socialItems = [
 
 // Navigation links
 const navItems = [
-  { href: "/", label: "Forside" },
-  { href: "/services", label: "Services" },
-  { href: "/om-os", label: "Om os" },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "/src/pages/Home.jsx", label: "Forside" },
+  { href: "/src/pages/Services.jsx", label: "Services" },
+  { href: "/src/pages/Cases.jsx", label: "Cases" },
+  { href: "/src/pages/HvemViEr.jsx", label: "Hvem vi er" },
+  { href: "/src/pages/Kontakt.jsx", label: "Kontakt" },
 ];
 
 // Samler alle kolonner i én struktur
