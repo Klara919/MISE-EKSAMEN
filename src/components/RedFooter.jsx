@@ -1,56 +1,54 @@
-import React from "react"; // Importerer React så vi kan bruge JSX og komponenter
-import "./RedFooter.css"; // Importerer CSS filen så styling bliver anvendt
+import React from "react";
+import "./RedFooter.css";
+import { Link } from "react-router-dom";
 
-// Liste med kontakt information (telefon + email)
 const contactItems = [
-  { href: "tel:+4560510512", label: "+45 60 51 05 12" }, // Klikbar telefon
-  { href: "mailto:MiSE@MiSE.com", label: "MiSE@MiSE.com" }, // Klikbar email
+  { href: "tel:+4560510512", label: "+45 60 51 05 12" },
+  { href: "mailto:MiSE@MiSE.com", label: "MiSE@MiSE.com" },
 ];
 
-// Liste med sociale medier
 const socialItems = [
   { href: "https://www.linkedin.com", label: "LinkedIn" },
   { href: "https://www.instagram.com", label: "Instagram" },
   { href: "https://www.facebook.com", label: "Facebook" },
 ];
 
-// Navigation links
 const navItems = [
-  { href: "/src/pages/Home.jsx", label: "Forside" },
-  { href: "/src/pages/Services.jsx", label: "Services" },
-  { href: "/src/pages/Cases.jsx", label: "Cases" },
-  { href: "/src/pages/HvemViEr.jsx", label: "Hvem vi er" },
-  { href: "/src/pages/Kontakt.jsx", label: "Kontakt" },
+  { to: "/", label: "Forside" },
+  { to: "/services", label: "Services" },
+  { to: "/cases", label: "Cases" },
+  { to: "/hvem-vi-er", label: "Hvem vi er" },
+  { to: "/kontakt", label: "Kontakt" },
 ];
 
-// Samler alle kolonner i én struktur
 const columns = [
-  { title: "Kontakt", items: contactItems }, // Første kolonne
-  { title: "Socials", items: socialItems }, // Anden kolonne
-  { title: "Sider", items: navItems }, // Tredje kolonne
+  { title: "Kontakt", items: contactItems },
+  { title: "Socials", items: socialItems },
+  { title: "Sider", items: navItems },
 ];
 
-// Genbrugelig komponent til hver kolonne
 function FooterColumn({ title, items }) {
   return (
-    // Section for hver kolonne
     <section aria-labelledby={`footer-${title.toLowerCase()}`}>
-      {/* Overskrift */}
       <h2
-        id={`footer-${title.toLowerCase()}`} // Kobler til aria-labelledby
-        className="footer-title" // CSS klasse
+        id={`footer-${title.toLowerCase()}`}
+        className="footer-title"
       >
-        {title} {/* Viser titel (fx Kontakt) */}
+        {title}
       </h2>
 
-      {/* Liste med links */}
       <ul className="footer-list">
         {items.map((item) => (
-          // Loop igennem hvert item
-          <li key={item.label}> {/* key hjælper React med performance */}
-            <a href={item.href} className="footer-link"> {/* Klikbart link */}
-              {item.label} {/* Teksten */}
-            </a>
+          <li key={item.label}>
+            {item.to ? (
+              <Link to={item.to} className="footer-link">
+                {item.label}
+              </Link>
+            ) : (
+              <a href={item.href} className="footer-link">
+                {item.label}
+              </a>
+            )}
           </li>
         ))}
       </ul>
@@ -58,28 +56,22 @@ function FooterColumn({ title, items }) {
   );
 }
 
-// Hoved Footer komponent
 export default function RedFooter() {
   return (
-    // Selve footeren
-<footer className="red-footer">
-      <div className="footer-inner"> {/* Wrapper for layout */}
-        
-        {/* Navigation område med kolonner */}
+    <footer className="red-footer">
+      <div className="footer-inner">
         <nav aria-label="Footer" className="footer-grid">
           {columns.map((column) => (
-            // Loop igennem alle kolonner
             <FooterColumn
-              key={column.title} // unik key
-              title={column.title} // titel
-              items={column.items} // data
+              key={column.title}
+              title={column.title}
+              items={column.items}
             />
           ))}
         </nav>
 
-        {/* Stor baggrundstekst */}
         <div aria-hidden="true" className="footer-brand">
-        <span>MiSE</span>
+          <span>MiSE</span>
         </div>
       </div>
     </footer>

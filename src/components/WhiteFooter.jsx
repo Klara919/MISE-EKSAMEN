@@ -1,5 +1,6 @@
 import React from "react"; // Importerer React så vi kan bruge JSX og komponenter
 import "./WhiteFooter.css"; // Importerer CSS filen så styling bliver anvendt
+import { Link } from "react-router-dom";
 
 
 // Liste med kontakt information (telefon + email)
@@ -19,11 +20,11 @@ const socialItems = [
 
 // Navigation links
 const navItems = [
- { href: "/src/pages/Home.jsx", label: "Forside" },
- { href: "/src/pages/Services.jsx", label: "Services" },
- { href: "/src/pages/Cases.jsx", label: "Cases" },
- { href: "/src/pages/HvemViEr.jsx", label: "Hvem vi er" },
- { href: "/src/pages/Kontakt.jsx", label: "Kontakt" },
+  { to: "/", label: "Forside" },
+  { to: "/services", label: "Services" },
+  { to: "/cases", label: "Cases" },
+  { to: "/hvem-vi-er", label: "Hvem vi er" },
+  { to: "/kontakt", label: "Kontakt" },
 ];
 
 
@@ -37,31 +38,37 @@ const columns = [
 
 // Genbrugelig komponent til hver kolonne
 function FooterColumn({ title, items }) {
- return (
-   // Section for hver kolonne
-   <section aria-labelledby={`footer-${title.toLowerCase()}`}>
-     {/* Overskrift */}
-     <h2
-       id={`footer-${title.toLowerCase()}`} // Kobler til aria-labelledby
-       className="footer-title" // CSS klasse
-     >
-       {title} {/* Viser titel (fx Kontakt) */}
-     </h2>
+  return (
+    <section aria-labelledby={`footer-${title.toLowerCase()}`}>
+      <h2
+        id={`footer-${title.toLowerCase()}`}
+        className="footer-title"
+      >
+        {title}
+      </h2>
 
-
-     {/* Liste med links */}
-     <ul className="footer-list">
-       {items.map((item) => (
-         // Loop igennem hvert item
-         <li key={item.label}> {/* key hjælper React med performance */}
-           <a href={item.href} className="footer-link"> {/* Klikbart link */}
-             {item.label} {/* Teksten */}
-           </a>
-         </li>
-       ))}
-     </ul>
-   </section>
- );
+      <ul className="footer-list">
+        {items.map((item) => (
+          <li key={item.label}>
+            {item.to ? (
+              <Link to={item.to} className="footer-link">
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                href={item.href}
+                className="footer-link"
+                target={item.href?.startsWith("http") ? "_blank" : undefined}
+                rel={item.href?.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
+                {item.label}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }
 
 

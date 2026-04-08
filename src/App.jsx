@@ -9,7 +9,6 @@ import Kontakt from "./pages/Kontakt.jsx";
 import SideBrand from "./components/SideBrand.jsx";
 import BurgerMenu from "./components/BurgerMenu.jsx";
 
-// VIGTIGT: import dine menu sider
 import Menu1 from "./components/Menu1.jsx";
 import Menu2 from "./components/Menu2.jsx";
 
@@ -25,12 +24,8 @@ function App() {
         <Route path="/cases" element={<Cases />} />
         <Route path="/hvem-vi-er" element={<HvemViEr />} />
         <Route path="/kontakt" element={<Kontakt />} />
-
-        {/* DISSE MANGLEDE */}
         <Route path="/menu1" element={<Menu1 />} />
         <Route path="/menu2" element={<Menu2 />} />
-
-        <Route path="/kontakt" element={<Kontakt />} />
       </Routes>
     </>
   );
