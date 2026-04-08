@@ -9,6 +9,7 @@ import servering from "../assets/ProcessBox/servering.mp4";
 function ProcessBox() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
+  const [seenSteps, setSeenSteps] = useState([0]); // step 0 er set fra start
   const timeoutRef = useRef(null);
 
   const steps = [
@@ -52,6 +53,11 @@ function ProcessBox() {
 
     timeoutRef.current = setTimeout(() => {
       setActiveIndex(index);
+
+      setSeenSteps((prev) =>
+        prev.includes(index) ? prev : [...prev, index]
+      );
+
       setIsClosing(false);
     }, 220);
   };
@@ -83,6 +89,7 @@ function ProcessBox() {
         <div className="process-box__accordion">
           {steps.map((step, index) => {
             const isActive = activeIndex === index && !isClosing;
+            const shouldAutoplay = isActive && seenSteps.includes(index);
 
             return (
               <div
@@ -106,11 +113,11 @@ function ProcessBox() {
                           key={step.video}
                           src={step.video}
                           className="process-item__video"
-                          autoPlay
+                          autoPlay={shouldAutoplay}
                           muted
-                          loop
                           playsInline
                           preload="metadata"
+                          controls={false}
                         />
                       )}
                     </div>
