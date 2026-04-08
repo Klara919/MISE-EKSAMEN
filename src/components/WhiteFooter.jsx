@@ -83,12 +83,12 @@ export default function WhiteFooter() {
          ))}
        </nav>
 
+        {/* Stor baggrundstekst */}
+        <div aria-hidden="true" className="footer-brand">
+        <span>MiSE</span>
+        </div>
+      </div>
+    </footer>
+  );
 
-       {/* Stor baggrundstekst */}
-       <div aria-hidden="true" className="footer-brand">
-       <span>MiSE</span>
-       </div>
-     </div>
-   </footer>
- );
 }
