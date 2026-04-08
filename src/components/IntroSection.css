@@ -1,66 +1,90 @@
 .intro {
- width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 80px 24px;
-  background-color: #454642;
-}
-
-.intro__container {
-  width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-}
-
-.intro h1 {
-  font-size: 42px;
-  line-height: 1.2;
-  font-weight: 600;
-  max-width: 700px;
-  margin-bottom: 60px;
-  color: #f3f1ea;
-}
-
-.intro__content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.intro__image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  filter: grayscale(100%);
-}
-
-.intro__text p {
-  font-size: 16px;
-  color: #d1d1cc;
-  line-height: 1.6;
-  margin-bottom: 24px;
-  margin-top: 0;
-}
-
-.intro__button {
-  display: inline-block;
-  background-color: #6a6a64;
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 24px;
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .intro {
-    padding: 100px 48px;
-  }
-
-  .intro__content {
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-  }
-}
+  width: 100%; /* fylder hele bredden */
+  max-width: 100%; /* begrænser ikke bredden */
+  margin: 0; /* fjerner default margin */
+  padding: 80px 24px; /* luft top/bund og sider */
+  background-color: #454642; /* baggrundsfarve */
+ }
+ 
+ .intro__container {
+   width: 100%; /* fylder hele bredden */
+   max-width: 1080px; /* max bredde på indhold */
+   margin: 0 auto; /* centrerer container */
+   margin-bottom: 50px; /* afstand ned til næste sektion */
+ }
+ 
+ .intro h1 {
+   font-size: 42px; /* stor overskrift */
+   line-height: 1.1; /* linjeafstand */
+   font-weight: 700; /* semi-bold */
+   max-width: 700px; /* begrænser tekstbredde */
+   margin-bottom: 60px; /* afstand til indhold under */
+   color: #ffffff; /* hvid tekst */
+ }
+ 
+ .intro__content {
+   display: grid; /* bruger grid layout */
+   grid-template-columns: 1fr; /* 1 kolonne (mobil) */
+   gap: 40px; /* afstand mellem elementer */
+   align-items: start; /* aligner indhold til toppen */
+ }
+ 
+ .intro__image img {
+   width: 100%; /* billede fylder container */
+   height: auto; /* bevarer proportioner */
+   display: block; /* fjerner inline spacing */
+   object-fit: cover; /* beskærer pænt hvis nødvendigt */
+   filter: grayscale(100%); /* gør billedet sort/hvid */
+ }
+ 
+ .intro__text p {
+   font-size: 16px; /* brødtekst størrelse */
+   color: #ffffff; /* tekstfarve */
+   font-weight: 300;
+   line-height: 1.5; /* læsevenlig linjeafstand */
+   margin-bottom: 24px; /* afstand mellem afsnit */
+   margin-top: 0; /* fjerner top margin */
+ }
+ 
+ .intro__button {
+   display: inline-block; /* gør link til “knap” */
+   background-color: #6a6a64; /* baggrund */
+   color: #ffffff; /* tekstfarve */
+   text-decoration: none; /* fjerner underline */
+   padding: 12px 24px; /* indvendig spacing */
+   cursor: pointer; /* hånd cursor */
+   font-size: 16px; /* tekst størrelse */
+ }
+ 
+ /* TABLET */
+ 
+ @media (min-width: 768px) {
+   .intro {
+     padding: 100px 48px; /* mere luft på større skærme */
+   }
+ 
+   .intro__content {
+     grid-template-columns: 1.2fr 0.8fr; /* 2 kolonner (tekst + billede) */
+     gap: 60px; /* større afstand mellem dem */
+   }
+ 
+ }
+ 
+ /* MOBIL */
+ 
+ @media (max-width: 600px) {
+ 
+   .intro h1 {
+     font-size: 25px; /* mindre overskrift */
+     margin-bottom: 32px; /* mindre afstand */
+   }
+ 
+   .intro__text p {
+     font-size: 14px; /* mindre brødtekst */
+     line-height: 1.5; /* lidt tættere tekst */
+   }
+ 
+   .intro__button {
+     font-size: 14px; /* mindre knap tekst */
+   }
+ }

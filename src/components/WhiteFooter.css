@@ -6,7 +6,7 @@
 }
 
 .white-footer .footer-inner {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 80px 64px 0;
   display: flex;
@@ -22,8 +22,8 @@
 
 .white-footer .footer-title {
   margin: 0 0 24px;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   text-align: left;
   color: #ffffff;
@@ -43,7 +43,7 @@
 .white-footer a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
@@ -71,13 +71,22 @@
   transform: translateY(0.08em);
 }
 
-@media (max-width: 900px) {
-  .white-footer .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  @media (max-width: 900px) {
+    .white-footer .footer-grid {
+      grid-template-columns: repeat(3, auto); /* behold 3 kolonner */
+      gap: 2rem; /* mindre gap så det kan være på mobil */
+      justify-content: space-between; /* fordeler dem pænt */
+    }
+  
+    .white-footer .footer-inner {
+      padding: 48px 24px 0;
+    }
 
-  .white-footer .footer-inner {
-    padding: 48px 24px 0;
+    .white-footer .footer-title {
+      font-size: 18px;
+    }
+
+    .white-footer a {
+      font-size: 12px;
+    }
   }
-}

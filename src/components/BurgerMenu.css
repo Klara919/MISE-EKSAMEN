@@ -1,166 +1,167 @@
-
-
 .burger-menu__toggle {
-  position: fixed;
-  left: 50%;
-  bottom: 28px;
-  transform: translateX(-50%);
-  width: 72px;
-  height: 72px;
-  border: none;
-  border-radius: 999px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1002;
-  padding: 0;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  position: fixed; /* knappen sidder fast på skærmen */
+  left: 50%; /* placeres midt på x-aksen */
+  bottom: 28px; /* afstand fra bunden */
+  transform: translateX(-50%); /* centrerer præcist */
+  width: 72px; /* bredde på knappen */
+  height: 72px; /* højde på knappen */
+  border: none; /* fjerner border */
+  border-radius: 999px; /* gør den helt rund */
+  background: #ffffff; /* hvid baggrund */
+  display: flex; /* flexbox */
+  align-items: center; /* centrerer lodret */
+  justify-content: center; /* centrerer vandret */
+  cursor: pointer; /* hånd cursor */
+  z-index: 1002; /* ligger ovenpå overlay */
+  padding: 0; /* ingen indvendig spacing */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* skygge */
 }
 
 .burger-menu__icon {
-  position: relative;
-  width: 26px;
-  height: 18px;
-  display: block;
+  position: relative; /* reference for linjer */
+  width: 26px; /* bredde */
+  height: 18px; /* højde */
+  display: block; /* block element */
 }
 
 .burger-menu__line {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #454642;
-  border-radius: 999px;
-  transition: transform 0.3s ease, top 0.3s ease;
+  position: absolute; /* placeres inde i icon */
+  left: 0; /* starter fra venstre */
+  width: 100%; /* fylder bredden */
+  height: 2px; /* tynd linje */
+  background: #454642; /* farve */
+  border-radius: 999px; /* afrundede ender */
+  transition: transform 0.3s ease, top 0.3s ease; /* animation */
 }
 
 .burger-menu__line--top {
-  top: 0px;
+  top: 0px; /* øverste linje */
 }
 
 .burger-menu__line--middle {
-  top: 8px;
+  top: 8px; /* midterste linje */
 }
 
 .burger-menu__line--bottom {
-  top: 16px;
+  top: 16px; /* nederste linje */
 }
 
+/* Når menu er åben → laver burger til X */
 .burger-menu__toggle--open .burger-menu__line--top {
-  top: 8px;
-  transform: rotate(45deg);
+  top: 8px; /* flyttes ned til midten */
+  transform: rotate(45deg); /* roteres */
 }
 
 .burger-menu__toggle--open .burger-menu__line--middle {
-  opacity: 0;
+  opacity: 0; /* skjules */
 }
 
 .burger-menu__toggle--open .burger-menu__line--bottom {
-  top: 8px;
-  transform: rotate(-45deg);
+  top: 8px; /* flyttes op til midten */
+  transform: rotate(-45deg); /* roteres modsat */
 }
 
-
+/* OVERLAY (menu baggrund) */
 .burger-menu__overlay {
-  position: fixed;
-  inset: 0;
-  background: #454642;
-  z-index: 1001;
-  clip-path: circle(36px at 50% calc(100% - 64px));
-  -webkit-clip-path: circle(36px at 50% calc(100% - 64px));
+  position: fixed; /* fylder hele skærmen */
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: #454642; /* baggrund */
+  z-index: 1001; /* under knappen */
+  clip-path: circle(36px at 50% calc(100% - 64px)); /* lille cirkel ved knappen */
+  -webkit-clip-path: circle(36px at 50% calc(100% - 64px)); /* safari support */
   transition: clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    -webkit-clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  overflow: hidden;
+    -webkit-clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1); /* animation */
+  pointer-events: none; /* kan ikke klikkes når lukket */
+  overflow: hidden; /* skjuler indhold */
 }
 
 .burger-menu__overlay--open {
-  clip-path: circle(150vmax at 50% calc(100% - 64px));
-  -webkit-clip-path: circle(150vmax at 50% calc(100% - 64px));
-  pointer-events: auto;
+  clip-path: circle(150vmax at 50% calc(100% - 64px)); /* vokser til hele skærmen */
+  -webkit-clip-path: circle(150vmax at 50% calc(100% - 64px)); /* safari */
+  pointer-events: auto; /* kan klikkes når åben */
 }
 
+/* NAV INDHOLD */
 .burger-menu__nav {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  transition-delay: 0s;
+  width: 100%; /* fylder hele */
+  height: 100%; /* fylder hele */
+  display: grid; /* grid layout */
+  place-items: center; /* centrerer indhold */
+  opacity: 0; /* skjult som default */
+  transition: opacity 0.2s ease; /* fade */
+  transition-delay: 0s; /* ingen delay */
 }
 
 .burger-menu__overlay--open .burger-menu__nav {
-  opacity: 1;
-  transition-delay: 0.22s;
+  opacity: 1; /* vises */
+  transition-delay: 0.22s; /* vises lidt efter overlay */
 }
 
 .burger-menu__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 34px;
-  font-family: "Montserrat", sans-serif;
+  list-style: none; /* fjerner bullets */
+  margin: 0; /* fjerner margin */
+  padding: 0; /* fjerner padding */
+  display: flex; /* flex layout */
+  flex-direction: column; /* vertikal liste */
+  align-items: center; /* centrerer */
+  gap: 20px; /* afstand mellem links */
+  font-family: "Montserrat", sans-serif; /* font */
 }
 
 .burger-menu__item {
-  opacity: 0;
-  transform: translateY(34px);
+  opacity: 0; /* skjult */
+  transform: translateY(34px); /* starter lidt nede */
   transition: opacity 0.35s ease,
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); /* animation */
 }
 
 .burger-menu__item--open {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1; /* bliver synlig */
+  transform: translateY(0); /* flytter op */
 }
 
 .burger-menu__link {
-  text-decoration: none;
-  color: #f5f3ed;
-  display: inline-block;
+  text-decoration: none; /* fjerner underline */
+  color: #f5f3ed; /* tekstfarve */
+  display: inline-block; /* gør det til block */
 }
 
 .burger-menu__link-mask {
-  display: inline-block;
-  overflow: hidden;
+  display: inline-block; /* wrapper */
+  overflow: hidden; /* bruges til animation (mask effect) */
 }
 
 .burger-menu__link-text {
-  display: inline-block;
-  font-size: clamp(2.4rem, 4vw, 2rem);
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  display: inline-block; /* inline block */
+  font-size: 50px; /* stor tekst */
+  line-height: 1; /* tæt linjeafstand */
+  font-weight: 300; /* let font */
+  letter-spacing: -0.03em; /* tættere bogstaver */
 }
 
+/* MOBIL */
 @media (max-width: 640px) {
   .burger-menu__toggle {
-    width: 64px;
+    width: 64px; /* mindre knap */
     height: 64px;
-    bottom: 20px;
+    bottom: 20px; /* lidt højere op */
   }
 
   .burger-menu__overlay {
-    clip-path: circle(32px at 50% calc(100% - 52px));
+    clip-path: circle(32px at 50% calc(100% - 52px)); /* mindre start cirkel */
     -webkit-clip-path: circle(32px at 50% calc(100% - 52px));
   }
 
   .burger-menu__overlay--open {
-    clip-path: circle(150vmax at 50% calc(100% - 52px));
+    clip-path: circle(150vmax at 50% calc(100% - 52px)); /* stadig full screen */
     -webkit-clip-path: circle(150vmax at 50% calc(100% - 52px));
   }
 
   .burger-menu__list {
-    gap: 24px;
+    gap: 24px; /* lidt større afstand */
   }
 
   .burger-menu__link-text {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: 40px; /* mindre tekst på mobil */
   }
 }

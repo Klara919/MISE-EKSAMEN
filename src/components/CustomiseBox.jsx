@@ -1,119 +1,114 @@
-import { useEffect, useRef, useState } from "react";
-import "./ProcessBox.css";
-import eggandflour from "../assets/ProcessBox/eggandflour.mp4";
-import cutpasta from "../assets/ProcessBox/cutpasta.mp4";
-import processbox3 from "../assets/ProcessBox/processbox3.svg";
-import processbox4 from "../assets/ProcessBox/processbox4.svg";
-import processbox5 from "../assets/ProcessBox/processbox5.svg";
+import { useEffect, useRef, useState } from "react"; 
+import "./ProcessBox.css"; 
+import eggandflour from "../assets/ProcessBox/eggandflour.mp4"; 
+import cutpasta from "../assets/ProcessBox/cutpasta.mp4"; 
+import gryde from "../assets/ProcessBox/gryde.mp4"; 
+import parmasan from "../assets/ProcessBox/parmasan.mp4"; 
+import servering from "../assets/ProcessBox/servering.mp4"; 
 
-function ProcessBox() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isClosing, setIsClosing] = useState(false);
-  const timeoutRef = useRef(null);
+function ProcessBox() { // opretter React-komponenten ProcessBox
+  const [activeIndex, setActiveIndex] = useState(0); // gemmer hvilket accordion-item der er åbent, starter på 0 (første item)
+  const [isClosing, setIsClosing] = useState(false); // holder styr på om accordion er i gang med at lukke
+  const [seenSteps, setSeenSteps] = useState([0]); // gemmer hvilke steps brugeren har set, step 0 er set fra start
+  const timeoutRef = useRef(null); // gemmer timeout-id så vi kan rydde det op senere
 
-  const steps = [
+  const steps = [ // array med alle dine accordion steps
     {
-      number: "01",
-      title: "Forberedelse",
-      text: "Når vi udvikler en ny ret til menukortet, starter vi med at finde ud af, hvilke råvarer vi skal bruge.\n\nPå samme måde begynder vi processen med research og behovsafdækning, hvor vi i tæt samarbejde kortlægger jeres mål og ønsker for at skabe en løsning, der passer til netop jeres virksomhed.",
-      video: eggandflour,
+      number: "01", // step nummer
+      title: "Forberedelse", // titel på step
+      text: "Når vi udvikler en ny ret til menukortet, starter vi med at finde ud af, hvilke råvarer vi skal bruge.\n\nPå samme måde begynder vi processen med research og behovsafdækning, hvor vi i tæt samarbejde kortlægger jeres mål og ønsker for at skabe en løsning, der passer til netop jeres virksomhed.", // beskrivende tekst, \n\n laver nyt afsnit
+      video: eggandflour, // video som hører til dette step
     },
     {
-      number: "02",
-      title: "Klargøring",
-      text: "På næste step klargør vi råvarerne – vi skærer, former og samler. På samme måde udvikler vi den visuelle stil og designelementer til websitet med fokus på det essentielle. Her opstilles mockups, hvor vi arbejder med en begrænset farvepalette, optimerede billeder og simple grafiske elementer for at reducere datamængden og skabe et hurtigt og effektivt website.",
-      video: cutpasta,
+      number: "02", // step nummer
+      title: "Klargøring", // titel
+      text: "På næste step klargør vi råvarerne – vi skærer, former og samler. På samme måde udvikler vi den visuelle stil og designelementer til websitet med fokus på det essentielle.  Her opstilles mockups, hvor vi arbejder med en begrænset farvepalette, optimerede billeder og simple grafiske elementer for at reducere datamængden og skabe et hurtigt og effektivt website.", // tekst
+      video: cutpasta, // video
     },
     {
-      number: "03",
-      title: "Tilberedning",
-      text: "Nu skal retten tilberedes. På samme måde udvikler vi websitet, hvor vi koger kodningen ned til en let og effektiv opbygning. Ved at minimere unødvendig kode og optimere strukturen sikrer vi høj performance og et website, der loader hurtigt og bruger færre ressourcer.",
-      image: processbox3,
+      number: "03", // step nummer
+      title: "Tilberedning", // titel
+      text: "Nu skal retten tilberedes. På samme måde udvikler vi websitet, hvor vi koger kodningen ned til en let og effektiv opbygning. Ved at minimere unødvendig kode og optimere strukturen sikrer vi høj performance og et website, der loader hurtigt og bruger færre ressourcer.", // tekst
+      video: gryde, // video
     },
     {
-      number: "04",
-      title: "Finish",
-      text: "I finish-fasen finjusterer vi design, indhold og funktionalitet. Her gennemgår vi alle detaljer, så websitet fremstår helstøbt, brugervenligt og klar til lancering med fokus på kvalitet og bæredygtige valg.",
-      image: processbox4,
+      number: "04", // step nummer
+      title: "Finish", // titel
+      text: "I finish-fasen finjusterer vi design, indhold og funktionalitet. Her gennemgår vi alle detaljer, så websitet fremstår helstøbt, brugervenligt og klar til lancering med fokus på kvalitet og bæredygtige valg.", // tekst
+      video: parmasan, // video
     },
     {
-      number: "05",
-      title: "Servering",
-      text: "Retten er færdig og klar til servering. Når websitet er testet og finjusteret, er det klar til lancering. I får et skræddersyet website, der passer til jeres målgruppe og behov. Resultatet er en visuelt stærk og brugervenlig løsning med fokus på bæredygtige tiltag.",
-      image: processbox5,
+      number: "05", // step nummer
+      title: "Servering", // titel
+      text: "Retten er færdig og klar til servering. Når websitet er testet og finjusteret, er det klar til lancering. I får et skræddersyet website, der passer til jeres målgruppe og behov. Resultatet er en visuelt stærk og brugervenlig løsning med fokus på bæredygtige tiltag.", // tekst
+      video: servering, // video
     },
   ];
 
-  const handleToggle = (index) => {
-    if (index === activeIndex) return;
+  const handleToggle = (index) => { // funktion som kører når man klikker på et accordion-item
+    if (index === activeIndex) return; // hvis man klikker på det allerede åbne item, sker der ikke noget
 
-    clearTimeout(timeoutRef.current);
+    clearTimeout(timeoutRef.current); // rydder tidligere timeout hvis der findes en
+    setIsClosing(true); // sætter closing-state til true så lukke-animation kan køre
 
-    setIsClosing(true);
+    timeoutRef.current = setTimeout(() => { // starter en forsinkelse før nyt item åbnes
+      setActiveIndex(index); // gør det klikkede item aktivt
 
-    timeoutRef.current = setTimeout(() => {
-      setActiveIndex(index);
-      setIsClosing(false);
-    }, 220);
+      setSeenSteps((prev) => // opdaterer listen over steps brugeren har set
+        prev.includes(index) ? prev : [...prev, index] // hvis step allerede er set, behold listen, ellers tilføj det
+      );
+
+      setIsClosing(false); // closing er færdig, så nyt item kan vises
+    }, 220); // venter 220 millisekunder
   };
 
-  useEffect(() => {
-    return () => clearTimeout(timeoutRef.current);
-  }, []);
+  useEffect(() => { // kører når komponenten mountes
+    return () => clearTimeout(timeoutRef.current); // rydder timeout når komponenten unmountes
+  }, []); // tom dependency array = kører kun ved mount/unmount
 
-  return (
-    <section className="process-box">
-      <div className="process-box__container">
-        <div className="process-box__intro">
-          <p className="process-box__eyebrow">Vores process</p>
+  return ( // JSX som komponenten renderer
+    <section className="process-box"> {/* yderste sektion */}
+      <div className="process-box__container"> {/* centreret container */}
+      
+        <div className="process-box__accordion"> {/* wrapper til hele accordion */}
+          {steps.map((step, index) => { // looper gennem alle steps
+            const isActive = activeIndex === index && !isClosing; // tjekker om dette step er det aktive og ikke i lukke-state
+            const shouldAutoplay = isActive && seenSteps.includes(index); // video autoplay kun hvis step er aktivt og allerede er set
 
-          <h2 className="process-box__heading">
-            Sådan bygger vi din
-            <br />
-            hjemmeside
-          </h2>
-
-          <p className="process-box__description">
-            Vi skaber hjemmesider, der ikke bare ser godt ud og fungerer effektivt,
-            men som også er udviklet med omtanke for miljøet. Gennem gennemtænkt
-            design, optimeret performance og bevidste digitale valg bygger vi en
-            løsning, der understøtter din forretning og tager hensyn til fremtiden.
-          </p>
-        </div>
-
-        <div className="process-box__accordion">
-          {steps.map((step, index) => {
-            const isActive = activeIndex === index && !isClosing;
-
-            return (
+            return ( // returnerer ét accordion-item for hvert step
               <div
-                key={step.number}
-                className={`process-item ${isActive ? "process-item--active" : ""}`}
+                key={step.number} // unik key til React
+                className={`process-item ${isActive ? "process-item--active" : ""}`} // tilføjer aktiv klasse hvis item er åbent
               >
                 <button
-                  type="button"
-                  className="process-item__trigger"
-                  onClick={() => handleToggle(index)}
+                  type="button" // gør knappen til en normal button
+                  className="process-item__trigger" // CSS-klasse til trigger
+                  onClick={() => handleToggle(index)} // klik åbner/lukker via handleToggle
                 >
-                  <span className="process-item__title">{step.title}</span>
-                  <span className="process-item__number">{step.number}</span>
+                  <span className="process-item__title">{step.title}</span> {/* viser step titel */}
+                  <span className="process-item__number">{step.number}</span> {/* viser step nummer */}
                 </button>
 
-                <div className="process-item__content">
-                  <div className="process-item__inner">
-                    <div className="process-item__media">
-                      <img
-                        src={step.image}
-                        alt={step.title}
-                        className="process-item__image"
-                        loading="lazy"
-                        decoding="async"
-                      />
+                <div className="process-item__content"> {/* skjult/åbent indhold */}
+                  <div className="process-item__inner"> {/* indre layout wrapper */}
+                    <div className="process-item__media"> {/* område til video */}
+                      {isActive && ( // video vises kun når item er aktivt
+                        <video
+                          key={step.video} // key tvinger video til at genindlæses når step skifter
+                          src={step.video} // vælger den rigtige video
+                          className="process-item__video" // CSS-klasse
+                          autoPlay={shouldAutoplay} // autoplay hvis betingelsen er opfyldt
+                          muted // video er muted
+                          playsInline // spiller inline på mobil i stedet for fullscreen
+                          preload="metadata" // loader kun metadata først
+                          controls={false} // skjuler video controls
+                        />
+                      )}
                     </div>
 
-                    <div className="process-item__text">
-                      {step.text.split("\n\n").map((paragraph, paragraphIndex) => (
-                        <p key={paragraphIndex}>{paragraph}</p>
+                    <div className="process-item__text"> {/* område til tekst */}
+                      {step.text.split("\n\n").map((paragraph, paragraphIndex) => ( // splitter teksten i afsnit ved dobbelt linjeskift
+                        <p key={paragraphIndex}>{paragraph}</p> // renderer hvert afsnit som et p-tag
                       ))}
                     </div>
                   </div>
@@ -127,4 +122,4 @@ function ProcessBox() {
   );
 }
 
-export default ProcessBox;
+export default ProcessBox; // eksporterer komponenten så den kan bruges andre steder

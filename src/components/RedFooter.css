@@ -9,7 +9,7 @@
 
 /* INNER */
 .red-footer .footer-inner {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 64px 0;
   display: flex;
@@ -27,8 +27,8 @@
 /* TITLER */
 .red-footer .footer-title {
   margin: 0 0 24px;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
@@ -47,7 +47,7 @@
 
 /* LINKS */
 .red-footer .footer-link {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   text-decoration: none;
   font-weight: 300;
@@ -79,11 +79,20 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .red-footer .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(3, auto); /* behold 3 kolonner */
+    gap: 2rem; /* mindre gap så det kan være på mobil */
+    justify-content: space-between; /* fordeler dem pænt */
   }
 
   .red-footer .footer-inner {
     padding: 48px 24px 0;
+  }
+
+  .red-footer .footer-title {
+    font-size: 18px;
+  }
+
+  .red-footer a {
+    font-size: 12px;
   }
 }

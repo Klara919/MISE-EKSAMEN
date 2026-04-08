@@ -22,9 +22,9 @@
   z-index: 2;
   width: 60%;
   min-height: 1300px;
-  background: #50504c;
+  background: #454642;
   color: white;
-  padding: 50px 60px 40px 40px;
+  padding: 50px 50px 40px 50px;
   box-sizing: border-box;
   margin-top: 80px;
 }
@@ -52,11 +52,11 @@
 }
 
 .menu1-content {
-  max-width: 470px;
+  max-width: 800px;
 }
 
 .menu1-title {
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   font-size: 20px;
   margin-top: 60px;
   font-weight: 700;
@@ -65,10 +65,17 @@
 
 .menu1-description {
   margin: 0;
-  font-size: 13px;
+  font-size: 16px;
+  font-weight: 300;
   margin-top: 20px;
+  max-width: 500px;
   line-height: 1.5;
   color: #ffffff;
+}
+
+.menu1-processbox {
+  width: 100%;
+
 }
 
 /* Tablet */

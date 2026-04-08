@@ -1,275 +1,274 @@
 .testimonial-section {
-  background: #CFCDC8;
-  color: #6d1b13;
-  padding: 88px 0 40px; 
-
+  background: #CFCDC8; /* baggrundsfarve på hele testimonial-sektionen */
+  color: #6d1b13; /* standard tekstfarve */
+  padding: 88px 0 40px; /* top, sider, bund spacing */
 }
 
 .testimonial-section__container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 0 40px;
+  max-width: 1200px; /* maksimal bredde på indholdet */
+  margin: 0 auto; /* centrerer containeren */
+  padding: 0 40px; /* luft i venstre og højre side */
 }
 
 .testimonial-section__header {
-  margin-bottom: 72px;
-  text-align: left;
+  margin-bottom: 72px; /* afstand ned til indholdet under headeren */
+  text-align: left; /* venstrejusterer teksten */
 }
 
 .testimonial-section__eyebrow {
-  margin: 0 0 14px;
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 400;
-  color: #6d1b13;
+  margin: 0 0 14px; /* ingen topmargin, 14px afstand nedad */
+  font-size: 16px; /* tekststørrelse */
+  line-height: 1.2; /* linjeafstand */
+  font-weight: 500; /* medium fontvægt */
+  color: #6d1b13; /* tekstfarve */
 }
 
 .testimonial-section__heading {
-  margin: 0;
-  font-size: 42px;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  font-weight: 500;
-  max-width: 760px;
-  color: #6d1b13;
+  margin: 0; /* fjerner default margin */
+  font-size: 42px; /* stor overskrift */
+  line-height: 0.95; /* tæt linjeafstand */
+  letter-spacing: -0.04em; /* trækker bogstaver lidt tættere sammen */
+  font-weight: 500; /* medium fontvægt */
+  max-width: 760px; /* begrænser bredden på overskriften */
+  color: #6d1b13; /* tekstfarve */
 }
 
 .testimonial-section__content {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 80px;
-  align-items: start;
+  display: grid; /* bruger grid layout */
+  grid-template-columns: 220px 1fr; /* venstre kolonne til controls, højre til indhold */
+  gap: 80px; /* afstand mellem kolonner */
+  align-items: start; /* starter indholdet i toppen */
 }
 
 .testimonial-section__controls {
-  display: flex;
-  align-items: center;
-  gap: 10rem;
+  display: flex; /* bruger flex layout */
+  align-items: center; /* centrerer lodret */
+  gap: 10rem; /* stor afstand mellem count og knapper */
 }
 
 .testimonial-section__buttons {
-  display: flex;
-  gap: 10px;
+  display: flex; /* lægger knapper ved siden af hinanden */
+  gap: 10px; /* afstand mellem knapper */
 }
 
 .testimonial-section__button {
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(109, 27, 19, 0.65);
-  background: transparent;
-  color: #6d1b13;
-  font-size: 16px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
+  width: 30px; /* knapbredde */
+  height: 30px; /* knaphøjde */
+  border: 1px solid rgba(109, 27, 19, 0.65); /* tynd ramme */
+  background: transparent; /* gennemsigtig baggrund */
+  color: #6d1b13; /* ikonfarve */
+  font-size: 16px; /* tekst/ikon størrelse */
+  line-height: 1; /* tæt linjehøjde */
+  display: flex; /* flex layout */
+  align-items: center; /* centrerer lodret */
+  justify-content: center; /* centrerer vandret */
+  cursor: pointer; /* hånd ved hover */
+  padding: 0; /* fjerner default padding */
 }
 
 .testimonial-section__button span {
-  display: block;
-  line-height: 1;
-  transform: translateY(-1px);
+  display: block; /* gør span til block */
+  line-height: 1; /* tæt linjehøjde */
+  transform: translateY(-1px); /* finjusterer ikonets placering */
 }
 
 .testimonial-section__count {
-  margin: 0;
-  font-size: 25px;
-  line-height: 1;
-  color: rgba(109, 27, 19, 0.55);
-  font-weight: 400;
+  margin: 0; /* fjerner default margin */
+  font-size: 24px; /* tekststørrelse */
+  line-height: 1; /* tæt linjehøjde */
+  color: #6d1b13; /* tekstfarve */
+  font-weight: 300; /* let fontvægt */
 }
 
 .testimonial-section__body {
-  max-width: 920px;
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  max-width: 920px; /* maks bredde på indholdet */
+  min-height: 360px; /* minimum højde */
+  display: flex; /* flex layout */
+  flex-direction: column; /* elementer ligger under hinanden */
+  justify-content: space-between; /* fordeler indhold med luft imellem */
 }
-
-
 
 .testimonial-section__quote {
-  margin: 0;
-  max-width: 980px;
-  font-size: 20px;
-  line-height: 1.45;
-  letter-spacing: -0.015em;
-  font-style: italic;
-  font-weight: 200;
-  color: #6d1b13;
+  margin: 0; /* fjerner default margin */
+  max-width: 980px; /* begrænser bredden */
+  font-size: 20px; /* citatets tekststørrelse */
+  line-height: 1.45; /* linjeafstand */
+  letter-spacing: -0.015em; /* gør teksten lidt tættere */
+  font-style: italic; /* kursiv tekst */
+  font-weight: 300; /* let fontvægt */
+  color: #6d1b13; /* tekstfarve */
   transition:
-    transform 0.58s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.42s ease;
-  will-change: transform, opacity;
-  text-align: left;
+    transform 0.58s cubic-bezier(0.22, 1, 0.36, 1), /* animation for bevægelse */
+    opacity 0.42s ease; /* animation for synlighed */
+  will-change: transform, opacity; /* browser-optimering til animation */
+  text-align: left; /* venstrejusteret tekst */
 }
 
+
 .testimonial-section__quote--pre-in {
-  transform: translateY(110%);
-  opacity: 0;
+  transform: translateY(110%); /* starter under sin normale placering */
+  opacity: 0; /* skjult */
 }
 
 .testimonial-section__quote--in {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(0); /* normal placering */
+  opacity: 1; /* synlig */
 }
 
 .testimonial-section__quote--out {
-  transform: translateY(-110%);
-  opacity: 0;
+  transform: translateY(-110%); /* flyttes op ved exit */
+  opacity: 0; /* skjules */
 }
 
 .testimonial-section__person {
-  display: flex;
-align-items: flex-start;
-  gap: 20px;
-margin-left: -100px;
-margin-bottom: 80px;
+  display: flex; /* flex layout */
+  align-items: flex-start; /* justerer indhold til toppen */
+  gap: 20px; /* afstand mellem avatar og tekst */
+  margin-left: -100px; /* trækker hele person-blokken mod venstre */
+  margin-bottom: 80px; /* afstand nedad */
   transition:
-    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.32s ease;
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), /* bevægelses-animation */
+    opacity 0.32s ease; /* fade-animation */
 }
 
 .testimonial-section__person--pre-in {
-  transform: translateY(18px);
-  opacity: 0;
+  transform: translateY(18px); /* starter lidt nede */
+  opacity: 0; /* skjult */
 }
 
 .testimonial-section__person--in {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(0); /* normal placering */
+  opacity: 1; /* synlig */
 }
 
 .testimonial-section__person--out {
-  transform: translateY(16px);
-  opacity: 0;
+  transform: translateY(16px); /* flyttes lidt ned ved exit */
+  opacity: 0; /* skjules */
 }
 
 .testimonial-section__avatar {
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
+  width: 96px; /* avatar bredde */
+  height: 96px; /* avatar højde */
+  object-fit: contain; /* hele billedet vises uden beskæring */
+  display: block; /* fjerner inline spacing */
+  flex-shrink: 0; /* avataren må ikke krympe */
 }
 
 .testimonial-section__name {
-  margin: 0 0 6px;
-  font-size: 20px;
-  line-height: 1;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: #6d1b13;
+  margin: 0 0 6px; /* afstand under navnet */
+  font-size: 20px; /* navnets størrelse */
+  line-height: 1; /* tæt linjehøjde */
+  font-weight: 500; /* medium fontvægt */
+  letter-spacing: -0.03em; /* lidt tættere bogstaver */
+  color: #6d1b13; /* tekstfarve */
 }
 
 .testimonial-section__company {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.3;
-  color: rgba(109, 27, 19, 0.55);
-  font-weight: 400;
+  margin: 0; /* fjerner default margin */
+  font-size: 15px; /* størrelse på firmanavn */
+  line-height: 1.3; /* linjeafstand */
+  color: rgba(109, 27, 19, 0.55); /* lysere tekstfarve */
+  font-weight: 400; /* normal fontvægt */
 }
 
 @media (max-width: 1024px) {
   .testimonial-section {
-    padding: 72px 0 96px;
+    padding: 72px 0 96px; /* mindre top spacing og mere bund spacing */
   }
 
   .testimonial-section__container {
-    width: calc(100% - 40px);
+    width: calc(100% - 40px); /* container fylder næsten hele bredden */
   }
 
   .testimonial-section__header {
-    margin-bottom: 56px;
+    margin-bottom: 56px; /* mindre afstand under header */
   }
 
   .testimonial-section__content {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr; /* går fra 2 kolonner til 1 kolonne */
+    gap: 32px; /* mindre afstand mellem elementer */
   }
 
   .testimonial-section__controls {
-    padding-top: 0;
-    gap: 32px;
+    padding-top: 0; /* ingen ekstra luft i toppen */
+    gap: 32px; /* mindre afstand mellem controls */
   }
 
   .testimonial-section__body {
-    min-height: 320px;
+    min-height: 320px; /* lidt lavere minimumshøjde */
   }
 
   .testimonial-section__quote-wrap {
-    min-height: 150px;
+    min-height: 150px; /* reserverer plads til quote-animation */
   }
 }
 
 @media (max-width: 640px) {
   .testimonial-section {
-    padding: 56px 0 72px;
+    padding: 56px 0 72px; /* mindre spacing på mobil */
   }
 
   .testimonial-section__container {
-    width: calc(100% - 24px);
+    width: calc(100% - 24px); /* smallere sidepadding på mobil */
   }
 
   .testimonial-section__header {
-    margin-bottom: 36px;
+    margin-bottom: 36px; /* mindre afstand under header */
   }
 
   .testimonial-section__eyebrow {
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 14px; /* mindre eyebrow tekst */
+    margin-bottom: 10px; /* mindre afstand under eyebrow */
   }
 
   .testimonial-section__heading {
-    font-size: 2.6rem;
-    line-height: 0.96;
+    font-size: 2.2rem; /* mindre heading på mobil */
+    line-height: 0.96; /* tæt linjeafstand */
   }
 
   .testimonial-section__controls {
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: space-between; /* count og knapper fordeles */
+    gap: 20px; /* mindre afstand */
   }
 
   .testimonial-section__button {
-    width: 42px;
-    height: 42px;
-    font-size: 24px;
+    width: 42px; /* større klikflade på mobil */
+    height: 42px; /* større klikflade på mobil */
+    font-size: 24px; /* større ikon */
   }
 
   .testimonial-section__count {
-    font-size: 28px;
+    font-size: 24px; /* lidt mindre count end før */
   }
 
   .testimonial-section__body {
-    min-height: 280px;
+    min-height: 280px; /* lavere minimumshøjde */
   }
 
   .testimonial-section__quote-wrap {
-    min-height: 120px;
+    min-height: 120px; /* reserveret plads til quote */
   }
 
   .testimonial-section__quote {
-    font-size: 1.15rem;
-    line-height: 1.5;
+    font-size: 1rem; /* mindre quote-tekst på mobil */
+    line-height: 1.45; /* lidt tættere linjeafstand */
   }
 
   .testimonial-section__person {
-    gap: 16px;
+    gap: 16px; /* lidt mindre afstand mellem avatar og tekst */
+    margin-left: -10px; /* flytter person-blokken længere mod højre end før */
   }
 
   .testimonial-section__avatar {
-    width: 74px;
-    height: 74px;
+    width: 74px; /* mindre avatar på mobil */
+    height: 74px; /* mindre avatar på mobil */
   }
 
   .testimonial-section__name {
-    font-size: 2rem;
+    font-size: 1.5rem; /* mindre navn på mobil */
   }
 
   .testimonial-section__company {
-    font-size: 16px;
+    font-size: 14px; /* mindre company tekst på mobil */
   }
 }

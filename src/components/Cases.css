@@ -1,189 +1,166 @@
-
-
 body {
- font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif; /* sætter Montserrat som standardfont på hele siden */
 }
-
 
 /* Sektion til cases */
 .cases {
- width: 100%;
- background-color: #CFCDC8;
- padding: 40px 0;
+  width: 100%; /* sektionen fylder hele bredden */
+  background-color: #CFCDC8; /* baggrundsfarve på cases-sektionen */
+  padding: 40px 0; /* luft over og under sektionen, ingen padding i siderne */
 }
-
 
 /* Container til cases */
 .cases-container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 0 40px;
+  max-width: 1200px; /* maks bredde på indholdet */
+  margin: 0 auto; /* centrerer containeren */
+  padding: 0 40px; /* luft i venstre og højre side */
 }
-
 
 /* Tekst */
 .cases p:first-of-type {
- color: #6D1B13;
- margin-bottom: 10px;
+  color: #6D1B13; /* farve på den første p i .cases */
+  margin-bottom: 10px; /* afstand ned til næste element */
+  font-weight: 550; /* lidt federe tekst */
+  font-size: 16px; /* tekststørrelse */
 }
-
 
 /* Overskrift */
 .cases h2 {
- font-size: 40px;
- color: #6D1B13;
-  margin: 0 0 14px;
- font-weight: 550;
- letter-spacing: 1px;
+  font-size: 42px; /* stor overskrift */
+  color: #6D1B13; /* overskriftens farve */
+  margin: 0 0 14px; /* ingen topmargin, 14px bundmargin */
+  font-weight: 550; /* medium/semi-bold */
+  letter-spacing: 1px; /* lidt luft mellem bogstaverne */
 }
-
 
 /* Tekst under overskriften */
 .cases p:last-of-type {
- max-width: 500px;
- margin-bottom: 60px;
- line-height: 1.6;
- color: #6D1B13;
+  max-width: 500px; /* begrænser tekstens bredde */
+  margin-bottom: 60px; /* stor afstand ned til næste sektion */
+  line-height: 1.5; /* linjeafstand for bedre læsbarhed */
+  color: #6D1B13; /* tekstfarve */
+  font-size: 16px; /* tekststørrelse */
+  font-weight: 300; /* let fontvægt */
 }
-
 
 /* Rækker til kort og tekst */
 .cases-row {
- display: grid;
- grid-template-columns: 1fr 1fr;
- gap: 20px;
- margin-bottom: 20px;
- align-items: stretch;
+  display: grid; /* bruger grid layout */
+  grid-template-columns: 1fr 1fr; /* laver 2 lige brede kolonner */
+  gap: 20px; /* afstand mellem kolonnerne */
+  margin-bottom: 20px; /* afstand ned til næste række */
+  align-items: stretch; /* sørger for at elementerne strækker sig lige højt */
 }
 
-
-/* Boks til tekst i højre side*/
+/* Boks til tekst i højre side */
 .cases-text {
- display: flex;
- align-items: end;
+  display: flex; /* bruger flex layout */
+  align-items: end; /* placerer indholdet i bunden lodret */
 }
-
 
 /* Tekst i boksen */
 .cases-text h2 {
- font-size: 52px;
- line-height: 1.1;
- color: #6D1B13;
+  font-size: 42px; /* størrelse på teksten */
+  font-weight: 700; /* fed tekst */
+  line-height: 1.1; /* tæt linjeafstand */
+  color: #6D1B13; /* tekstfarve */
 }
-
 
 /* 2 små billeder */
 .cases-small {
- display: grid;
- grid-template-columns: 1fr 1fr;
- gap: 20px;
+  display: grid; /* bruger grid */
+  grid-template-columns: 1fr 1fr; /* to små kort ved siden af hinanden */
+  gap: 20px; /* afstand mellem dem */
 }
-
 
 /* Kort */
 .case-card {
- position: relative;
- height: 280px;
- overflow: hidden;
+  position: relative; /* gør det muligt at placere overlay absolut ovenpå */
+  height: 280px; /* fast højde på kortet */
+  overflow: hidden; /* skjuler det der går udenfor kortet */
 }
-
 
 /* Billede */
 .case-card img {
- width: 100%;
- height: 100%;
- object-fit: cover;
- display: block;
- transition: transform 0.4s ease;
+  width: 100%; /* fylder hele kortets bredde */
+  height: 100%; /* fylder hele kortets højde */
+  object-fit: cover; /* beskærer billedet pænt så det fylder boksen */
+  display: block; /* fjerner inline spacing under billedet */
+  transition: transform 0.4s ease; /* smooth animation når billedet zoomer */
 }
-
 
 /* Overlay */
 .case-overlay {
- position: absolute;
- inset: 0;
- background: rgba(0,0,0,0.25);
- transition: background 0.3s ease;
+  position: absolute; /* lægger overlay ovenpå billedet */
+  inset: 0; /* fylder hele kortet */
+  background: rgba(0,0,0,0.25); /* mørk gennemsigtig overlay */
+  transition: background 0.3s ease; /* smooth overgang i baggrund */
 }
-
 
 /* Titel - ALTID i midten */
 .case-overlay h3 {
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- color: white;
- font-size: 24px;
- font-weight: 500;
- text-align: center;
+  position: absolute; /* placeres frit inde i overlay */
+  top: 45%; /* lidt over midten */
+  left: 50%; /* midt vandret */
+  transform: translate(-50%, -50%); /* centrerer præcist */
+  color: white; /* hvid tekst */
+  font-size: 24px; /* størrelse på titlen */
+  font-weight: 500; /* medium fontvægt */
+  text-align: center; /* centrerer teksten */
 }
-
 
 /* Tekst - skjult i starten */
 .case-overlay p {
- position: absolute;
- top: 60%;
- left: 50%;
- transform: translate(-50%, 10px);
- color: white !important;
- font-size: 14px;
- opacity: 0;
- transition: 0.3s ease;
- text-align: center;
+  position: absolute; /* placeres frit inde i overlay */
+  top: 55%; /* lidt under titlen */
+  left: 50%; /* midt vandret */
+  transform: translate(-50%, 10px); /* centrerer og flytter lidt ned */
+  color: white !important; /* tvinger teksten til at være hvid */
+  font-size: 12px; /* lille tekst */
+  opacity: 0; /* skjult som standard */
+  transition: 0.3s ease; /* smooth animation */
+  text-align: center; /* centrerer teksten */
 }
-
 
 /* Hover */
 .case-card:hover img {
- transform: scale(1.05);
+  transform: scale(1.05); /* zoomer billedet lidt ind ved hover */
 }
-
 
 .case-card:hover .case-overlay {
- background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.5); /* gør overlay mørkere ved hover */
 }
-
 
 .case-card:hover .case-overlay p {
- opacity: 1;
- transform: translate(-50%, 0);
+  opacity: 1; /* gør teksten synlig ved hover */
+  transform: translate(-50%, 0); /* flytter teksten op til dens endelige position */
 }
-
 
 /* ========== MOBIL ========== */
 @media (max-width: 700px) {
 
+  .cases-row {
+    grid-template-columns: 1fr; /* på mobil bliver hver række til 1 kolonne */
+  }
 
- .cases-row {
-   grid-template-columns: 1fr;
- }
+  .cases-small {
+    grid-template-columns: 1fr; /* de to små cases bliver stablet ovenpå hinanden */
+  }
 
+  .cases-text {
+    order: -1; /* flytter tekstboksen op før de andre elementer */
+    margin-bottom: -20px; /* trækker næste element tættere op */
+  }
 
- .cases-small {
-   grid-template-columns: 1fr;
- }
+  .case-card {
+    height: 230px; /* gør kortene lavere på mobil */
+  }
 
+  .cases-text h2 {
+    font-size: 36px; /* mindre tekst i boksen på mobil */
+  }
 
- .cases-text {
-   order: -1;
-   margin-bottom: -20px;
- }
-
-
- .case-card {
-   height: 230px;
- }
-
-
- .cases-text h2 {
-   font-size: 36px;
- }
-
-
- .cases h2 {
-   font-size: 32px;
- }
-
-
+  .cases h2 {
+    font-size: 32px; /* mindre generel h2 på mobil */
+  }
 }
