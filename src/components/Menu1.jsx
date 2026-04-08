@@ -1,5 +1,6 @@
 import './Menu.css';
 import { useNavigate } from 'react-router-dom';
+import ProcessBox from './ProcessBox';
 
 export default function Menu1() {
   const navigate = useNavigate();
@@ -23,8 +24,10 @@ export default function Menu1() {
             designvalg og optimerede løsninger skaber vi digitale produkter,
             der er hurtige, lette og ressourceeffektive.
           </p>
+          <ProcessBox/>
         </div>
       </div>
+  
     </div>
   );
 }
