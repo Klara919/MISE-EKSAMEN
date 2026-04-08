@@ -1,13 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-@font-face {
-  font-family: "Brice";
-  src: url("../assets/FONT/Brice-Black.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
 
-/* 🔴 YDERSTE CONTAINER */
+/* YDERSTE CONTAINER */
 .red-footer {
   margin-top: auto;
   background: #cfcdc8;
