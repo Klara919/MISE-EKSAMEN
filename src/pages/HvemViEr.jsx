@@ -3,7 +3,7 @@ import "./HvemViEr.css";
 
 import TeamCard from "../components/TeamCard";
 import RedFooter from "../components/RedFooter";
-import SideBrand from "../components/SideBrand";
+import { Helmet } from "react-helmet-async";
 
 import emilImage from "../assets/Portrætter/emil.webp";
 import klaraImage from "../assets/Portrætter/klara.webp";
@@ -14,7 +14,13 @@ import natImage from "../assets/Portrætter/nat.webp";
 export default function HvemViEr() {
   return (
     <div className="page">
-
+      <Helmet>
+        <title>Hvem vi er | MiSE</title>
+        <meta
+        name="description"
+        content="Lær MiSE at kende – et webbureau for restaurationsbranchen med fokus på struktur, visuel kvalitet, performance og bevidste digitale valg."
+       />
+      </Helmet>
 
       <main className="hvem-container">
         <section className="hvem-intro">

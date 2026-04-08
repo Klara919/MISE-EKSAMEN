@@ -1,8 +1,8 @@
 import React from "react";
 import "./Kontakt.css";
-import SideBrand from "../components/SideBrand";
 import Footer from "../components/RedFooter";
 import kontaktImage from "../assets/bord.svg";
+import { Helmet } from "react-helmet-async";
 
 
 const contactContent = {
@@ -21,6 +21,15 @@ const contactContent = {
 export default function Kontakt() {
   return (
     <div className="kontakt-page">
+      
+      <Helmet>
+       <title>Kontakt | MiSE</title>
+       <meta
+        name="description"
+        content="Kontakt MiSE og hør mere om, hvordan vi udvikler websites og digitale løsninger til restaurationsbranchen med fokus på overskuelighed og performance."
+       />
+      </Helmet>
+
 
       <main className="kontakt-main">
         <section className="kontakt-section" aria-labelledby="kontakt-title">
@@ -65,7 +74,7 @@ export default function Kontakt() {
         </section>
       </main>
 
-
+    
       <Footer />
     </div>
   );
