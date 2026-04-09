@@ -1,4 +1,4 @@
-import './Menu.css';
+import './Menu1.css';
 import { useNavigate } from 'react-router-dom';
 import ProcessBox from './ProcessBox';
 import WhiteFooter from './WhiteFooter';
@@ -12,7 +12,7 @@ export default function Menu1() {
         <div className="menu1-overlay"></div>
 
         <div className="menu1-card">
-          <button className="menu1-close" onClick={() => navigate('/')}>
+          <button className="menu1-close" onClick={() => navigate('/Services')}>
             ×
           </button>
 

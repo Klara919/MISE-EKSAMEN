@@ -1,0 +1,167 @@
+.menu2-page {
+    position: relative;
+    min-height: 100vh;
+    background: url('../assets/Services/pasta.svg') center/cover no-repeat;
+    background-color: #454642;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 35px 20px;
+    box-sizing: border-box;
+  }
+  
+  .menu2-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.074);
+  }
+  
+  .menu2-card {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    min-height: 1300px;
+    background: #454642;
+    color: white;
+    padding: 50px 50px 40px 50px;
+    box-sizing: border-box;
+    margin-top: 80px;
+  }
+  
+  .menu2-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #CFCDC8;
+    font-size: 56px;
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 100;
+  }
+  
+  .menu2-label {
+    margin: 0 0 28px 0;
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 1;
+    color: #CFCDC8;
+    text-transform: uppercase;
+  }
+  
+  .menu2-content {
+    max-width: 800px;
+  }
+  
+  .menu2-title {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    margin-top: 60px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .menu2-description {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 20px;
+    max-width: 500px;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+  
+  .menu2-customizeBox {
+    width: 100%;
+  
+  }
+  
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .menu2-card {
+      width: 80%;
+      min-height: 1100px;
+      padding: 40px 40px 30px 30px;
+    }
+  
+    .menu2-label {
+      font-size: 56px;
+    }
+  
+    .menu2-close {
+      font-size: 46px;
+    }
+  }
+  
+  /* Mobil */
+  @media (max-width: 768px) {
+    .menu2-page {
+      min-height: 100vh;
+      padding: 16px;
+    }
+  
+    .menu2-card {
+      width: 100%;
+      min-height: auto;
+      margin-top: 20px;
+      padding: 24px 20px 30px 20px;
+    }
+  
+    .menu2-label {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+  
+    .menu2-close {
+      top: 14px;
+      right: 14px;
+      font-size: 38px;
+    }
+  
+    .menu2-content {
+      max-width: 100%;
+    }
+  
+    .menu2-title {
+      font-size: 18px;
+      margin-top: 30px;
+    }
+  
+    .menu2-description {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+  }
+  
+  /* Små mobiler */
+  @media (max-width: 480px) {
+    .menu2-page {
+      padding: 12px;
+    }
+  
+    .menu2-card {
+      padding: 20px 16px 24px 16px;
+    }
+  
+    .menu2-label {
+      font-size: 34px;
+    }
+  
+    .menu2-close {
+      font-size: 32px;
+      top: 10px;
+      right: 10px;
+    }
+  
+    .menu2-title {
+      font-size: 16px;
+    }
+  
+    .menu2-description {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  }
