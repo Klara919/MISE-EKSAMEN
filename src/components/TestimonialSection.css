@@ -11,19 +11,18 @@
 }
 
 .testimonial-section__header {
-  margin-bottom: 72px; /* afstand ned til indholdet under headeren */
+  margin-bottom: 20px; /* afstand ned til indholdet under headeren */
   text-align: left; /* venstrejusterer teksten */
 }
 
 .testimonial-section__eyebrow {
-  margin: 0 0 14px; /* ingen topmargin, 14px afstand nedad */
   font-size: 16px; /* tekststørrelse */
   line-height: 1.2; /* linjeafstand */
   font-weight: 500; /* medium fontvægt */
   color: #6d1b13; /* tekstfarve */
 }
 
-.testimonial-section__heading {
+.testimonial-section__heading{
   margin: 0; /* fjerner default margin */
   font-size: 42px; /* stor overskrift */
   line-height: 0.95; /* tæt linjeafstand */
@@ -52,8 +51,8 @@
 }
 
 .testimonial-section__button {
-  width: 30px; /* knapbredde */
-  height: 30px; /* knaphøjde */
+  width: 40px; /* knapbredde */
+  height: 40px; /* knaphøjde */
   border: 1px solid rgba(109, 27, 19, 0.65); /* tynd ramme */
   background: transparent; /* gennemsigtig baggrund */
   color: #6d1b13; /* ikonfarve */
@@ -64,6 +63,7 @@
   justify-content: center; /* centrerer vandret */
   cursor: pointer; /* hånd ved hover */
   padding: 0; /* fjerner default padding */
+  margin-top: -40px;
 }
 
 .testimonial-section__button span {
@@ -73,7 +73,7 @@
 }
 
 .testimonial-section__count {
-  margin: 0; /* fjerner default margin */
+  margin: 0;
   font-size: 24px; /* tekststørrelse */
   line-height: 1; /* tæt linjehøjde */
   color: #6d1b13; /* tekstfarve */

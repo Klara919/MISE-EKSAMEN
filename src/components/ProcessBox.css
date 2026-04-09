@@ -44,7 +44,7 @@
 
 .process-item__title {
   font-size: 20px; /* titelstørrelse */
-  font-weight: 700; /* fed tekst */
+  font-weight: 600; /* fed tekst */
   line-height: 1.2; /* linjeafstand */
   text-align: left; /* venstrejusteret */
   font-family: "Montserrat", sans-serif; /* fontvalg */

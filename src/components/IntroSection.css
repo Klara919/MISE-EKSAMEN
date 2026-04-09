@@ -3,6 +3,7 @@
   max-width: 100%; /* begrænser ikke bredden */
   margin: 0; /* fjerner default margin */
   padding: 80px 24px; /* luft top/bund og sider */
+  color: #ffffff !important;
  }
  
  .intro__container {
@@ -13,13 +14,14 @@
  }
  
  .intro h1 {
-   font-size: 42px; /* stor overskrift */
-   line-height: 1.1; /* linjeafstand */
-   font-weight: 700; /* semi-bold */
+   font-size: 40px; /* stor overskrift */
+   line-height: 1.2; /* linjeafstand */
+   font-weight: 600; /* semi-bold */
    max-width: 700px; /* begrænser tekstbredde */
    margin-bottom: 60px; /* afstand til indhold under */
-   color: #ffffff; /* hvid tekst */
- }
+   color: #ffffff !important;
+  }
+ 
  
  .intro__content {
    display: grid; /* bruger grid layout */
@@ -38,7 +40,7 @@
  
  .intro__text p {
    font-size: 16px; /* brødtekst størrelse */
-   color: #ffffff; /* tekstfarve */
+   color: #ffffff !important;
    font-weight: 300;
    line-height: 1.5; /* læsevenlig linjeafstand */
    margin-bottom: 24px; /* afstand mellem afsnit */

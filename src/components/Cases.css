@@ -29,8 +29,7 @@ body {
   font-size: 42px; /* stor overskrift */
   color: #6D1B13; /* overskriftens farve */
   margin: 0 0 14px; /* ingen topmargin, 14px bundmargin */
-  font-weight: 500; /* medium/semi-bold */
-  letter-spacing: 1px; /* lidt luft mellem bogstaverne */
+  font-weight: 600; /* medium/semi-bold */
 }
 
 /* Tekst under overskriften */
@@ -61,7 +60,7 @@ body {
 /* Tekst i boksen */
 .cases-text h2 {
   font-size: 42px; /* størrelse på teksten */
-  font-weight: 700; /* fed tekst */
+  font-weight: 600; /* fed tekst */
   line-height: 1.1; /* tæt linjeafstand */
   color: #6D1B13; /* tekstfarve */
 }

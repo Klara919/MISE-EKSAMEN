@@ -47,6 +47,7 @@ body {
 .hero-content h1 {
   color: white; /* tekstfarve */
   line-height: 0.55; /* meget tæt linjeafstand */
+  margin-top: 3px;
   font-size: 101px; /* stor headline */
   font-family: "montserrat", sans-serif; /* font */
   font-weight: 700; /* fed */
@@ -102,7 +103,7 @@ body {
   top: 0; /* starter fra toppen */
   width: 50%; /* halvdelen af skærmen */
   height: 100%; /* fuld højde */
-  background: #2f312e; /* farve på dørene */
+  background: #454642; /* farve på dørene */
   transition: transform 1.6s cubic-bezier(0.77, 0, 0.18, 1); /* smooth animation */
 }
 
@@ -132,7 +133,7 @@ body {
   flex-direction: column; /* vertikal */
   align-items: center; /* center horisontalt */
   justify-content: center; /* center vertikalt */
-  gap: 60px; /* afstand mellem logo og tekst */
+  gap: 20px; /* afstand mellem logo og tekst */
   text-align: center; /* centrer tekst */
   color: white; /* tekstfarve */
   transition: 0.5s ease; /* animation */
