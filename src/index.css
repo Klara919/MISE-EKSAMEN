@@ -40,3 +40,7 @@ body {
 }
 
 @import '@fontsource-variable/montserrat/wght.css';
+
+body {
+  font-family: "Montserrat-Variable", sans-serif;
+}
