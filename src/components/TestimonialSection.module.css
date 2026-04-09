@@ -17,11 +17,11 @@
 }
 
 .testimonialSectionEyebrow {
-  font-size: 16px;
+  font-size: 16px;;
   line-height: 1;
   font-weight: 500;
   color: #6d1b13;
-  margin: 0 0 4px 0;
+  margin: 0 0 10px 0;
 }
 
 .testimonialSectionHeading {
@@ -29,7 +29,7 @@
   font-size: 42px;
   line-height: 0.9;
   letter-spacing: -0.04em;
-  font-weight: 500;
+  font-weight: 600;
   max-width: 760px;
   color: #6d1b13;
 }
@@ -65,7 +65,7 @@
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  margin-top: -40px;
+  margin-top: 5px;
 }
 
 .testimonialSectionButton span {
