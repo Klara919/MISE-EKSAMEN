@@ -21,7 +21,13 @@ export default function Menu1() {
             Vi starter med en dialog for at afdække netop jeres behov. Herefter skræddersyr vi en løsning, hvor latent det er optimering af SEO, performance, udvikling af visuel identitet eller noget helt fjerde. Med fokus på gennemtænkte valg og effektive løsninger skaber vi et website, der er hurtigt, enkelt og ressourcebevidst.
           </p>
         </div>
+          <div className="menu2-customizeBox">
+            <ProcessBox />
+          </div>
       </div>
     </div>
+
+       <WhiteFooter />
+        </>
   );
 }
