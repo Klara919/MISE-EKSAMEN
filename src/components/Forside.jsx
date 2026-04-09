@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import heroLeft from "../assets/pasta3.svg";
 import heroRight from "../assets/bord.svg";
 import logo from "../assets/MISEgraa.svg";
-import "./Forside.css";
+import styles from "./Forside.module.css";
 
 function Forside() {
   const texts = [
@@ -25,9 +25,7 @@ function Forside() {
   const [showIntro, setShowIntro] = useState(!hasSeenIntro);
 
   useEffect(() => {
-    if (hasSeenIntro) {
-      return;
-    }
+    if (hasSeenIntro) return;
 
     sessionStorage.setItem("hasSeenIntro", "true");
 
@@ -67,34 +65,37 @@ function Forside() {
 
   return (
     <>
-      {showIntro && !hideOverlay && (
-        <div className={`intro-overlay ${doorsOpen ? "open" : ""}`}>
-          <div className="door door-left"></div>
-          <div className="door door-right"></div>
+  {showIntro && !hideOverlay && (
+  <div className={`${styles.introOverlay} ${doorsOpen ? styles.open : ""}`}>
+    <div
+      className={`${styles.door} ${styles.doorLeft} ${doorsOpen ? styles.doorLeftOpen : ""}`}
+    ></div>
+    <div
+      className={`${styles.door} ${styles.doorRight} ${doorsOpen ? styles.doorRightOpen : ""}`}
+    ></div>
 
-          <div className={`intro-text ${doorsOpen ? "fade-out" : ""}`}>
-            <img src={logo} alt="Mise logo" className="intro-logo" />
-            <p>Webbureau specialiseret i restaurationsbranchen</p>
-          </div>
-        </div>
-      )}
-
-      <section className="hero-section">
-        <div className="hero-wrapper">
-          <div className="hero-images">
-            <div className="hero-left">
+    <div className={`${styles.introText} ${doorsOpen ? styles.fadeOut : ""}`}>
+      <img src={logo} alt="Mise logo" className={styles.introLogo} />
+      <p>Webbureau specialiseret i restaurationsbranchen</p>
+    </div>
+  </div>
+)}
+      <section className={styles.heroSection}>
+        <div className={styles.heroWrapper}>
+          <div className={styles.heroImages}>
+            <div className={styles.heroLeft}>
               <img src={heroLeft} alt="" />
 
-              <div className="hero-content">
+              <div className={styles.heroContent}>
                 <h1>we create.</h1>
 
-                <p className={animate ? "text-enter" : "text-exit"}>
+                <p className={animate ? styles.textEnter : styles.textExit}>
                   {texts[index]}
                 </p>
               </div>
             </div>
 
-            <div className="hero-right">
+            <div className={styles.heroRight}>
               <img src={heroRight} alt="" />
             </div>
           </div>
@@ -105,4 +106,3 @@ function Forside() {
 }
 
 export default Forside;
-

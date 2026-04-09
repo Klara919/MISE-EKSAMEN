@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react"; 
-import "./TestimonialSection.css"; 
-import testi1 from "../assets/Faces/testi1.svg"; 
-import testi2 from "../assets/Faces/testi2.svg"; 
-import testi3 from "../assets/Faces/testi3.svg"; 
+import { useEffect, useRef, useState } from "react";
+import styles from "./TestimonialSection.module.css";
+import testi1 from "../assets/Faces/testi1.svg";
+import testi2 from "../assets/Faces/testi2.svg";
+import testi3 from "../assets/Faces/testi3.svg";
 
-function TestimonialSection() { // opretter komponenten
-
+function TestimonialSection() {
   const testimonials = [
     {
       name: "Jeanne",
@@ -30,131 +29,135 @@ function TestimonialSection() { // opretter komponenten
     },
   ];
 
-  const [displayedIndex, setDisplayedIndex] = useState(0); // hvilket testimonial vises
-  const [phase, setPhase] = useState("in"); // styrer animation (in / out / pre-in)
-  const timeoutRef = useRef(null); // gemmer timeout ID
+  const [displayedIndex, setDisplayedIndex] = useState(0);
+  const [phase, setPhase] = useState("in");
+  const timeoutRef = useRef(null);
 
-  const handleChange = (newIndex) => { // funktion til at skifte testimonial
-    if (newIndex === displayedIndex) return; // gør intet hvis samme index
+  const handleChange = (newIndex) => {
+    if (newIndex === displayedIndex) return;
 
-    clearTimeout(timeoutRef.current); // rydder tidligere animation
-    setPhase("out"); // starter fade-out animation
+    clearTimeout(timeoutRef.current);
+    setPhase("out");
 
-    timeoutRef.current = setTimeout(() => { // venter før skift
-      setDisplayedIndex(newIndex); // skifter testimonial
-      setPhase("pre-in"); // sætter startposition for ny animation
+    timeoutRef.current = setTimeout(() => {
+      setDisplayedIndex(newIndex);
+      setPhase("preIn");
 
-      requestAnimationFrame(() => { // sikrer korrekt rendering timing
-        requestAnimationFrame(() => { // dobbelt frame for smooth animation
-          setPhase("in"); // starter fade-in animation
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setPhase("in");
         });
       });
-    }, 320); // matcher CSS animation timing
+    }, 320);
   };
 
-  const handlePrev = () => { // går til forrige testimonial
+  const handlePrev = () => {
     const nextIndex =
-      displayedIndex === 0 ? testimonials.length - 1 : displayedIndex - 1; // loop tilbage hvis første
-    handleChange(nextIndex); // skifter
+      displayedIndex === 0 ? testimonials.length - 1 : displayedIndex - 1;
+    handleChange(nextIndex);
   };
 
-  const handleNext = () => { // går til næste testimonial
+  const handleNext = () => {
     const nextIndex =
-      displayedIndex === testimonials.length - 1 ? 0 : displayedIndex + 1; // loop til start hvis sidste
-    handleChange(nextIndex); // skifter
+      displayedIndex === testimonials.length - 1 ? 0 : displayedIndex + 1;
+    handleChange(nextIndex);
   };
 
-  useEffect(() => { // kører når komponent mountes
-    return () => clearTimeout(timeoutRef.current); // rydder timeout ved unmount
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
   }, []);
 
-  const current = testimonials[displayedIndex]; // vælger det aktuelle testimonial
+  const current = testimonials[displayedIndex];
+
+  const quotePhaseClass = {
+    preIn: styles.testimonialSectionQuotePreIn,
+    in: styles.testimonialSectionQuoteIn,
+    out: styles.testimonialSectionQuoteOut,
+  };
+
+  const personPhaseClass = {
+    preIn: styles.testimonialSectionPersonPreIn,
+    in: styles.testimonialSectionPersonIn,
+    out: styles.testimonialSectionPersonOut,
+  };
 
   return (
     <section className="cases" data-sidebrand="beige">
-    <section className="testimonial-section"> {/* hele sektionen */}
-      <div className="testimonial-section__container"> {/* centreret container */}
-
-        <div className="testimonial-section__header"> {/* header */}
-          <p className="testimonial-section__eyebrow">Anmeldelser</p> {/* lille titel */}
-          <h2 className="testimonial-section__heading">
-            Hvad siger vores kunder?
-          </h2> {/* hovedoverskrift */}
-        </div>
-
-        <div className="testimonial-section__content"> {/* layout wrapper */}
-
-          <div className="testimonial-section__controls"> {/* knapper + counter */}
-
-            <div className="testimonial-section__buttons"> {/* knapper wrapper */}
-
-              <button
-                type="button" /* knap type */
-                className="testimonial-section__button" /* styling */
-                onClick={handlePrev} /* klik = forrige */
-                aria-label="Forrige anmeldelse" /* accessibility */
-              >
-                <span>←</span> {/* ikon */}
-              </button>
-
-              <button
-                type="button"
-                className="testimonial-section__button"
-                onClick={handleNext} /* klik = næste */
-                aria-label="Næste anmeldelse"
-              >
-                <span>→</span>
-              </button>
-            </div>
-
-            <p className="testimonial-section__count"> {/* viser position */}
-              {displayedIndex + 1}/{testimonials.length} {/* fx 1/3 */}
-            </p>
+      <section className={styles.testimonialSection}>
+        <div className={styles.testimonialSectionContainer}>
+          <div className={styles.testimonialSectionHeader}>
+            <p className={styles.testimonialSectionEyebrow}>Anmeldelser</p>
+            <h2 className={styles.testimonialSectionHeading}>
+              Hvad siger vores kunder?
+            </h2>
           </div>
 
-          <div className="testimonial-section__body"> {/* selve indholdet */}
-
-            <div className="testimonial-section__quote-wrap"> {/* wrapper til quote */}
-              <div className="testimonial-section__quote-mask"> {/* mask til animation */}
-
-                <p
-                  key={displayedIndex} /* tvinger React til at re-render */
-                  className={`testimonial-section__quote testimonial-section__quote--${phase}`} /* dynamisk animation class */
+          <div className={styles.testimonialSectionContent}>
+            <div className={styles.testimonialSectionControls}>
+              <div className={styles.testimonialSectionButtons}>
+                <button
+                  type="button"
+                  className={styles.testimonialSectionButton}
+                  onClick={handlePrev}
+                  aria-label="Forrige anmeldelse"
                 >
-                  {current.quote} {/* viser citat */}
-                </p>
+                  <span>←</span>
+                </button>
 
+                <button
+                  type="button"
+                  className={styles.testimonialSectionButton}
+                  onClick={handleNext}
+                  aria-label="Næste anmeldelse"
+                >
+                  <span>→</span>
+                </button>
               </div>
+
+              <p className={styles.testimonialSectionCount}>
+                {displayedIndex + 1}/{testimonials.length}
+              </p>
             </div>
 
-            <div
-              className={`testimonial-section__person testimonial-section__person--${phase}`} /* animation på person */
-            >
-              <img
-                src={current.image} /* viser billede */
-                alt={current.name} /* alt tekst */
-                className="testimonial-section__avatar" /* styling */
-                loading="lazy" /* loader først når synlig */
-                decoding="async" /* optimerer rendering */
-              />
+            <div className={styles.testimonialSectionBody}>
+              <div className={styles.testimonialSectionQuoteWrap}>
+                <div className={styles.testimonialSectionQuoteMask}>
+                  <p
+                    key={displayedIndex}
+                    className={`${styles.testimonialSectionQuote} ${quotePhaseClass[phase]}`}
+                  >
+                    {current.quote}
+                  </p>
+                </div>
+              </div>
 
-              <div className="testimonial-section__person-text"> {/* tekst container */}
-                <h3 className="testimonial-section__name">
-                  {current.name} {/* navn */}
-                </h3>
+              <div
+                className={`${styles.testimonialSectionPerson} ${personPhaseClass[phase]}`}
+              >
+                <img
+                  src={current.image}
+                  alt={current.name}
+                  className={styles.testimonialSectionAvatar}
+                  loading="lazy"
+                  decoding="async"
+                />
 
-                <p className="testimonial-section__company">
-                  {current.company} {/* virksomhed */}
-                </p>
+                <div className={styles.testimonialSectionPersonText}>
+                  <h3 className={styles.testimonialSectionName}>
+                    {current.name}
+                  </h3>
+
+                  <p className={styles.testimonialSectionCompany}>
+                    {current.company}
+                  </p>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </section>
   );
 }
 
-export default TestimonialSection; // eksporterer komponenten
+export default TestimonialSection;

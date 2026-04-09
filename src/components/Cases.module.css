@@ -1,0 +1,147 @@
+.cases {
+  width: 100%;
+  background-color: #cfcdc8;
+  padding: 40px 0;
+}
+
+.casesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.casesEyebrow {
+  color: #6d1b13;
+  margin: 0 0 10px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.casesHeading {
+  font-size: 42px;
+  color: #6d1b13;
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+
+.casesDescription {
+  max-width: 500px;
+  margin: 0 0 60px;
+  line-height: 1.5;
+  color: #6d1b13;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.casesRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.casesText {
+  display: flex;
+  align-items: end;
+}
+
+.casesTextHeading {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #6d1b13;
+  margin: 0;
+}
+
+.casesSmall {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.caseCard {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.caseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.caseOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease;
+}
+
+.caseTitle {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.caseText {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.3s ease;
+  text-align: center;
+  margin: 0;
+}
+
+.caseCard:hover .caseImage {
+  transform: scale(1.05);
+}
+
+.caseCard:hover .caseOverlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.caseCard:hover .caseText {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 700px) {
+  .casesRow {
+    grid-template-columns: 1fr;
+  }
+
+  .casesSmall {
+    grid-template-columns: 1fr;
+  }
+
+  .casesText {
+    order: -1;
+    margin-bottom: -20px;
+  }
+
+  .caseCard {
+    height: 230px;
+  }
+
+  .casesTextHeading {
+    font-size: 36px;
+  }
+
+  .casesHeading {
+    font-size: 32px;
+  }
+}

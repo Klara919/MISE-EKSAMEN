@@ -1,0 +1,196 @@
+body {
+  overflow-x: hidden;
+}
+
+.heroSection {
+  padding: 80px 40px 40px;
+  margin: 0;
+  background-color: #454642;
+}
+
+.heroWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heroImages {
+  display: flex;
+  width: 100%;
+  height: 590px;
+}
+
+.heroLeft,
+.heroRight {
+  width: 50%;
+  position: relative;
+}
+
+.heroLeft img,
+.heroRight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroContent {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.heroContent h1 {
+  color: white;
+  line-height: 0.55;
+  margin-top: 3px;
+  font-size: 101px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-align: right;
+}
+
+.heroContent p {
+  margin-top: -20px;
+  margin-left: auto;
+  padding-right: 10px;
+  width: fit-content;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+  text-align: right;
+}
+
+.textEnter {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.4s ease;
+}
+
+.textExit {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: 0.4s ease;
+}
+
+.introOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.open {
+  pointer-events: none;
+}
+
+.door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #454642;
+  transition: transform 1.6s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.doorLeft {
+  left: 0;
+}
+
+.doorRight {
+  right: 0;
+}
+
+.doorLeftOpen {
+  transform: translateX(-100%);
+}
+
+.doorRightOpen {
+  transform: translateX(100%);
+}
+.introOverlay.open .doorLeft {
+  transform: translateX(-100%);
+}
+
+.introOverlay.open .doorRight {
+  transform: translateX(100%);
+}
+
+.introText {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.introLogo {
+  width: clamp(300px, 38vw, 650px);
+  height: auto;
+}
+
+.introText p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: clamp(14px, 2vw, 24px);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@media (max-width: 900px) {
+  .heroSection {
+    padding: 50px 24px 24px;
+  }
+
+  .heroImages {
+    height: 440px;
+  }
+
+  .heroContent h1 {
+    font-size: 72px;
+  }
+
+  .heroContent p {
+    font-size: 20px;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroSection {
+    padding: 40px 16px 16px;
+  }
+
+  .heroImages {
+    height: 300px;
+  }
+
+  .introText {
+    justify-content: flex-start;
+    margin-top: 100px;
+    gap: 40px;
+  }
+
+  .heroContent h1 {
+    font-size: 42px;
+  }
+
+  .heroContent p {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+}
