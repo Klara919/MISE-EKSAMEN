@@ -1,3 +1,9 @@
+body {
+  font-family: 'Montserrat', sans-serif; /* sætter Montserrat som standardfont på hele siden */
+  background-color: #454642; /* baggrundsfarve for hele siden */
+  color: #ffffff; /* standard tekstfarve */
+}
+
 .intro {
   width: 100%; /* fylder hele bredden */
   max-width: 100%; /* begrænser ikke bredden */
@@ -16,7 +22,7 @@
  .intro h1 {
    font-size: 40px; /* stor overskrift */
    line-height: 1.2; /* linjeafstand */
-   font-weight: 600; /* semi-bold */
+   font-weight: 700; /* semi-bold */
    max-width: 700px; /* begrænser tekstbredde */
    margin-bottom: 60px; /* afstand til indhold under */
    color: #ffffff !important;
