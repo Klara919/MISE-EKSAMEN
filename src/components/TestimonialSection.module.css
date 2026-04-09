@@ -1,7 +1,7 @@
 .testimonialSection {
   background: #cfcdc8;
   color: #6d1b13;
-  padding: 10px 0 120px;
+  padding: 10px 0 150px;
 }
 
 .testimonialSectionContainer {
@@ -84,7 +84,7 @@
 
 .testimonialSectionBody {
   max-width: 920px;
-  min-height: 360px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
