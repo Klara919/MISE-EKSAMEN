@@ -144,4 +144,23 @@
   .casesHeading {
     font-size: 32px;
   }
+
+  .caseImage,
+  .caseOverlay,
+  .caseText {
+    transition: none;
+  }
+
+  .caseImage {
+    transform: none !important;
+  }
+
+  .caseOverlay {
+    background: rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .caseText {
+    opacity: 0 !important;
+    transform: translate(-50%, 10px) !important;
+  }
 }
