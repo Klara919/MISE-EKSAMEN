@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react"; 
-import heroLeft from "../assets/pasta3.svg"; 
-import heroRight from "../assets/bord.svg"; 
-import logo from "../assets/MISEgraa.svg"; 
-import "./Forside.css"; 
+import { useState, useEffect } from "react";
+import heroLeft from "../assets/pasta3.svg";
+import heroRight from "../assets/bord.svg";
+import logo from "../assets/MISEgraa.svg";
+import "./Forside.css";
 
-function Forside() { // opretter komponenten
-
-  const texts = [ // array med tekster der skifter
+function Forside() {
+  const texts = [
     "Responsible webdesign",
     "Responsible webdesign",
     "Visual identity",
@@ -15,79 +14,89 @@ function Forside() { // opretter komponenten
     "With a sustainable focus",
   ];
 
-  const [index, setIndex] = useState(0); // hvilken tekst der vises lige nu
-  const [animate, setAnimate] = useState(true); // styrer animation (fade in/out)
-  const [doorsOpen, setDoorsOpen] = useState(false); // styrer om intro-døre er åbne
-  const [hideOverlay, setHideOverlay] = useState(false); // styrer om overlay skal fjernes helt
+  const hasSeenIntro =
+    typeof window !== "undefined" &&
+    sessionStorage.getItem("hasSeenIntro") === "true";
 
-  useEffect(() => { // kører én gang når siden loader
+  const [index, setIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
+  const [doorsOpen, setDoorsOpen] = useState(false);
+  const [hideOverlay, setHideOverlay] = useState(hasSeenIntro);
+  const [showIntro, setShowIntro] = useState(!hasSeenIntro);
+
+  useEffect(() => {
+    if (hasSeenIntro) {
+      return;
+    }
+
+    sessionStorage.setItem("hasSeenIntro", "true");
 
     const openTimer = setTimeout(() => {
-      setDoorsOpen(true); // åbner dørene efter 2 sek
+      setDoorsOpen(true);
     }, 2000);
 
     const hideTimer = setTimeout(() => {
-      setHideOverlay(true); // fjerner overlay efter 3.8 sek
+      setHideOverlay(true);
     }, 3800);
 
-    return () => { // cleanup når komponent unmountes
-      clearTimeout(openTimer); // stopper første timer
-      clearTimeout(hideTimer); // stopper anden timer
+    return () => {
+      clearTimeout(openTimer);
+      clearTimeout(hideTimer);
     };
-  }, []); // tom dependency = kører kun én gang
+  }, [hasSeenIntro]);
 
-  useEffect(() => { // kører hver gang index ændrer sig
+  useEffect(() => {
+    if (index >= texts.length - 1) return;
 
-    if (index >= texts.length - 1) return; // stopper når sidste tekst er nået
+    let textTimer;
 
     const timer = setTimeout(() => {
-      setAnimate(false); // starter fade-out animation
+      setAnimate(false);
 
-      setTimeout(() => {
-        setIndex((prev) => prev + 1); // skifter til næste tekst
-        setAnimate(true); // fade-in igen
-      }, 400); // matcher CSS animation
+      textTimer = setTimeout(() => {
+        setIndex((prev) => prev + 1);
+        setAnimate(true);
+      }, 400);
+    }, 2000);
 
-    }, 2000); // skifter tekst hver 2 sek
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(textTimer);
+    };
+  }, [index, texts.length]);
 
-    return () => clearTimeout(timer); // cleanup
-  }, [index, texts.length]); // afhænger af index
-
-  return ( // JSX output
+  return (
     <>
-      {!hideOverlay && ( // vis overlay så længe hideOverlay er false
-        <div className={`intro-overlay ${doorsOpen ? "open" : ""}`}> {/* tilføjer class "open" når dørene åbner */}
+      {showIntro && !hideOverlay && (
+        <div className={`intro-overlay ${doorsOpen ? "open" : ""}`}>
+          <div className="door door-left"></div>
+          <div className="door door-right"></div>
 
-          <div className="door door-left"></div> {/* venstre dør */}
-          <div className="door door-right"></div> {/* højre dør */}
-
-          <div className={`intro-text ${doorsOpen ? "fade-out" : ""}`}> {/* tekst der fader ud */}
-            <img src={logo} alt="Mise logo" className="intro-logo" /> {/* logo */}
-            <p>Webbureau specialiseret i restaurationsbranchen</p> {/* tekst */}
+          <div className={`intro-text ${doorsOpen ? "fade-out" : ""}`}>
+            <img src={logo} alt="Mise logo" className="intro-logo" />
+            <p>Webbureau specialiseret i restaurationsbranchen</p>
           </div>
         </div>
       )}
 
-      <section className="hero-section"> {/* hero sektion */}
-        <div className="hero-wrapper"> {/* centrerer indhold */}
-          <div className="hero-images"> {/* wrapper for billeder */}
+      <section className="hero-section">
+        <div className="hero-wrapper">
+          <div className="hero-images">
+            <div className="hero-left">
+              <img src={heroLeft} alt="" />
 
-            <div className="hero-left"> {/* venstre side */}
-              <img src={heroLeft} alt="" /> {/* venstre billede */}
+              <div className="hero-content">
+                <h1>we create.</h1>
 
-              <div className="hero-content"> {/* tekst ovenpå billedet */}
-                <h1>we create.</h1> {/* headline */}
-
-                <p className={animate ? "text-enter" : "text-exit"}> {/* skifter klasse baseret på animation */}
-                  {texts[index]} {/* viser tekst fra array */}
+                <p className={animate ? "text-enter" : "text-exit"}>
+                  {texts[index]}
                 </p>
               </div>
             </div>
 
-            <div className="hero-right"> {/* højre side */}
-              <img src={heroRight} alt="" /> {/* højre billede */}
+            <div className="hero-right">
+              <img src={heroRight} alt="" />
             </div>
-
           </div>
         </div>
       </section>
@@ -95,4 +104,5 @@ function Forside() { // opretter komponenten
   );
 }
 
-export default Forside; // gør komponenten tilgængelig andre steder
+export default Forside;
+

@@ -8,6 +8,7 @@ import Kontakt from "./pages/Kontakt.jsx";
 
 import SideBrand from "./components/SideBrand.jsx";
 import BurgerMenu from "./components/BurgerMenu.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 import Menu1 from "./components/Menu1.jsx";
 import Menu2 from "./components/Menu2.jsx";
@@ -15,6 +16,7 @@ import Menu2 from "./components/Menu2.jsx";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <BurgerMenu />
       <SideBrand />
 

@@ -3,7 +3,6 @@
   max-width: 100%; /* begrænser ikke bredden */
   margin: 0; /* fjerner default margin */
   padding: 80px 24px; /* luft top/bund og sider */
-  background-color: #454642; /* baggrundsfarve */
  }
  
  .intro__container {

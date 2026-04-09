@@ -86,7 +86,14 @@ body {
   inset: 0; /* fylder hele skærmen */
   z-index: 9999; /* meget højt lag */
   overflow: hidden; /* skjuler det der går udenfor */
+  pointer-events: auto;
 }
+
+
+.intro-overlay.open {
+  pointer-events: none;
+}
+
 
 /* DØRE ANIMATION */
 
