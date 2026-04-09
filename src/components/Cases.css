@@ -20,7 +20,7 @@ body {
 .cases p:first-of-type {
   color: #6D1B13; /* farve på den første p i .cases */
   margin-bottom: 10px; /* afstand ned til næste element */
-  font-weight: 550; /* lidt federe tekst */
+  font-weight: 500; /* lidt federe tekst */
   font-size: 16px; /* tekststørrelse */
 }
 
