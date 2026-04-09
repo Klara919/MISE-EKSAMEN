@@ -13,6 +13,7 @@ import natImage from "../assets/Portrætter/nat.webp";
 
 export default function HvemViEr() {
   return (
+    <section className="cases" data-sidebrand="beige">
     <div className="page">
       <Helmet>
         <title>Hvem vi er | MiSE</title>
@@ -77,5 +78,6 @@ export default function HvemViEr() {
 
       <RedFooter />
     </div>
+    </section>
   );
 }

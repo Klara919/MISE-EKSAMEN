@@ -71,6 +71,7 @@ function TestimonialSection() { // opretter komponenten
   const current = testimonials[displayedIndex]; // vælger det aktuelle testimonial
 
   return (
+    <section className="cases" data-sidebrand="beige">
     <section className="testimonial-section"> {/* hele sektionen */}
       <div className="testimonial-section__container"> {/* centreret container */}
 
@@ -151,6 +152,7 @@ function TestimonialSection() { // opretter komponenten
           </div>
         </div>
       </div>
+    </section>
     </section>
   );
 }

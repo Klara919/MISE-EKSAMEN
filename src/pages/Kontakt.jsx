@@ -20,6 +20,7 @@ const contactContent = {
 
 export default function Kontakt() {
   return (
+    <section className="cases" data-sidebrand="beige">
     <div className="kontakt-page">
       
       <Helmet>
@@ -72,10 +73,12 @@ export default function Kontakt() {
           </div>
 
         </section>
+    
       </main>
 
     
       <Footer />
     </div>
+    </section>
   );
 }

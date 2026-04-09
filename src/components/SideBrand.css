@@ -38,3 +38,17 @@
     font-family: "Montserrat", sans-serif;
     line-height: 1;
   }
+
+  @media (max-width: 768px) {
+    .side-brand {
+      right: 12px; /* længere ind (fra 24px → 12px) */
+    }
+  
+    .side-brand__mise {
+      font-size: 22px; /* mindre end 30px */
+    }
+  
+    .side-brand__sub {
+      font-size: 12px; /* mindre end 15px */
+    }
+  }

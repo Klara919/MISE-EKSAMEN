@@ -164,5 +164,6 @@
   .team-card__quote {
     max-width: 24ch;
     font-size: 0.95rem;
+    color: #ffffff;
   }
 }
