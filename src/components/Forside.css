@@ -49,7 +49,7 @@ body {
   line-height: 0.55; /* meget tæt linjeafstand */
   margin-top: 3px;
   font-size: 101px; /* stor headline */
-  font-family: "montserrat", sans-serif; /* font */
+  font-family: "Montserrat-Variable", sans-serif;
   font-weight: 700; /* fed */
   text-align: right; /* højrejusteret */
 }
@@ -59,7 +59,7 @@ body {
   margin-left: auto; /* skubber teksten til højre */
   padding-right: 10px; /* lidt luft til højre */
   width: fit-content; /* kun så bred som teksten */
-  font-family: "montserrat", sans-serif; /* font */
+  font-family: "Montserrat-Variable", sans-serif;
   font-size: 24px; /* tekst størrelse */
   font-weight: 300;
   color: white; /* tekstfarve */
@@ -145,7 +145,7 @@ body {
 }
 
 .intro-text p {
-  font-family: "montserrat", sans-serif; /* font */
+  font-family: "Montserrat-Variable", sans-serif;
   font-weight: 300;
   font-size: clamp(14px, 2vw, 24px); /* responsiv tekst */
   color: rgba(255, 255, 255, 0.9); /* lidt gennemsigtig hvid */
