@@ -34,7 +34,7 @@ body {
 
 @font-face {
   font-family: "Brice";
-  src: url("./assets/FONT/Brice-Black.otf") format("opentype");
+  src: url("/public/FONT/Brice-Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
