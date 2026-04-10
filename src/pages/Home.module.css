@@ -1,0 +1,69 @@
+.page {
+  min-height: 100vh;
+}
+
+.pageDark {
+  background: #454642;
+}
+
+.processIntro {
+  max-width: 1200px;
+  margin: 0 auto 42px;
+  padding: 0 48px;
+  text-align: left;
+}
+
+.processEyebrow {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ffffff;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+.processHeading {
+  margin: 0 0 22px;
+  font-size: 42px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  max-width: 760px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.processDescription {
+  margin: 0;
+  max-width: 900px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .processIntro {
+    padding: 0 20px;
+  }
+
+  .processEyebrow {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .processHeading {
+    font-size: 30px;
+    line-height: 0.96;
+    margin-bottom: 18px;
+  }
+
+  .processDescription {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

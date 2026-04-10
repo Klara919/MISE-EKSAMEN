@@ -28,7 +28,7 @@ function TestimonialSection() {
         "“Vi havde brug for et website, der føltes mere roligt, moderne og gennemtænkt. MiSE ramte præcis den balance og skabte en side, der afspejler vores værdier på en enkel og effektiv måde.”",
     },
   ];
-
+  
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const [phase, setPhase] = useState("in");
   const timeoutRef = useRef(null);

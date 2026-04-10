@@ -1,14 +1,13 @@
+/* RedFooter.module.css */
 
-
-/* YDERSTE CONTAINER */
-.red-footer {
+.footer {
   margin-top: auto;
   background: #cfcdc8;
   color: #6d1b13;
 }
 
 /* INNER */
-.red-footer .footer-inner {
+.inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 64px 0;
@@ -17,15 +16,15 @@
 }
 
 /* GRID */
-.red-footer .footer-grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   gap: 25rem;
 }
 
-/* TITLER */
-.red-footer .footer-title {
+/* TITLES */
+.title {
   margin: 0 0 24px;
   font-size: 24px;
   font-weight: 500;
@@ -33,20 +32,20 @@
   text-align: left;
 }
 
-/* LISTE */
-.red-footer .footer-list {
+/* LIST */
+.list {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: left;
 }
 
-.red-footer .footer-list li {
+.list li {
   margin-bottom: 5px;
 }
 
 /* LINKS */
-.red-footer .footer-link {
+.link {
   font-size: 16px;
   line-height: 1.5;
   text-decoration: none;
@@ -55,18 +54,18 @@
   color: #6d1b13;
 }
 
-.red-footer .footer-link:hover {
+.link:hover {
   opacity: 0.7;
 }
 
 /* BRAND */
-.red-footer .footer-brand {
+.brand {
   margin-top: 2rem;
   text-align: center;
   overflow: hidden;
 }
 
-.red-footer .footer-brand span {
+.brand span {
   display: block;
   font-size: clamp(8rem, 30vw, 23rem);
   font-weight: 900;
@@ -78,21 +77,21 @@
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .red-footer .footer-grid {
-    grid-template-columns: repeat(3, auto); /* behold 3 kolonner */
-    gap: 2rem; /* mindre gap så det kan være på mobil */
-    justify-content: space-between; /* fordeler dem pænt */
+  .grid {
+    grid-template-columns: repeat(3, auto);
+    gap: 2rem;
+    justify-content: space-between;
   }
 
-  .red-footer .footer-inner {
+  .inner {
     padding: 48px 24px 0;
   }
 
-  .red-footer .footer-title {
+  .title {
     font-size: 18px;
   }
 
-  .red-footer a {
+  .link {
     font-size: 12px;
   }
 }

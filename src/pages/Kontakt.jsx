@@ -1,9 +1,8 @@
 import React from "react";
-import "./Kontakt.css";
+import styles from "./kontakt.module.css";
 import Footer from "../components/RedFooter";
 import kontaktImage from "../assets/bord.svg";
 import { Helmet } from "react-helmet-async";
-
 
 const contactContent = {
   eyebrow: "Kontakt",
@@ -21,64 +20,59 @@ const contactContent = {
 export default function Kontakt() {
   return (
     <section className="cases" data-sidebrand="beige">
-    <div className="kontakt-page">
-      
-      <Helmet>
-       <title>Kontakt | MiSE</title>
-       <meta
-        name="description"
-        content="Kontakt MiSE og hør mere om, hvordan vi udvikler websites og digitale løsninger til restaurationsbranchen med fokus på overskuelighed og performance."
-       />
-      </Helmet>
+      <div className={styles.page}>
+        <Helmet>
+          <title>Kontakt | MiSE</title>
+          <meta
+            name="description"
+            content="Kontakt MiSE og hør mere om, hvordan vi udvikler websites og digitale løsninger til restaurationsbranchen med fokus på overskuelighed og performance."
+          />
+        </Helmet>
 
+        <main className={styles.main}>
+          <section className={styles.section} aria-labelledby="kontakt-title">
+            <p className={styles.eyebrow}>{contactContent.eyebrow}</p>
 
-      <main className="kontakt-main">
-        <section className="kontakt-section" aria-labelledby="kontakt-title">
-          <p className="kontakt-eyebrow">{contactContent.eyebrow}</p>
+            <h1 id="kontakt-title" className={styles.title}>
+              {contactContent.title}
+            </h1>
 
-          <h1 id="kontakt-title" className="kontakt-title">
-            {contactContent.title}
-          </h1>
+            <div className={styles.grid}>
+              <figure className={styles.media}>
+                <img
+                  src={kontaktImage}
+                  alt="Mad og drikke på bord"
+                  className={styles.image}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
 
-          <div className="kontakt-grid">
-            <figure className="kontakt-media">
-              <img
-                src={kontaktImage}
-                alt="Mad og drikke på bord"
-                className="kontakt-image"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
+              <div className={styles.content}>
+                {contactContent.paragraphs.map((text) => (
+                  <p key={text} className={styles.text}>
+                    {text}
+                  </p>
+                ))}
 
-            <div className="kontakt-content">
-              {contactContent.paragraphs.map((text) => (
-                <p key={text} className="kontakt-text">
-                  {text}
-                </p>
-              ))}
+                <hr className={styles.divider} />
 
-              <hr className="kontakt-divider" />
+                <address className={styles.details}>
+                  <a href={contactContent.phoneHref} className={styles.link}>
+                    {contactContent.phoneLabel}
+                  </a>
 
-              <address className="kontakt-details">
-                <a href={contactContent.phoneHref} className="kontakt-link">
-                  {contactContent.phoneLabel}
-                </a>
-
-                <a href={contactContent.emailHref} className="kontakt-link">
-                  {contactContent.emailLabel}
-                </a>
-              </address>
+                  <a href={contactContent.emailHref} className={styles.link}>
+                    {contactContent.emailLabel}
+                  </a>
+                </address>
+              </div>
             </div>
-          </div>
+          </section>
+        </main>
 
-        </section>
-    
-      </main>
-
-    
-      <Footer />
-    </div>
+        <Footer />
+      </div>
     </section>
   );
 }

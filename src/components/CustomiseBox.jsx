@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./CustomiseBox.css";
+import styles from "./CustomiseBox.module.css";
 import Dialog from "../assets/CustomiseBox/Dialog.svg";
 import Analyse from "../assets/CustomiseBox/Analyse.svg";
 import Strategi from "../assets/CustomiseBox/Strategi.svg";
@@ -61,39 +61,39 @@ function CustomiseBox() {
   }, []);
 
   return (
-    <section className="customise-box">
-      <div className="customise-box__container">
-        <div className="customise-box__accordion">
+    <section className={styles.customiseBox}>
+      <div className={styles.container}>
+        <div className={styles.accordion}>
           {steps.map((step, index) => {
             const isActive = activeIndex === index && !isClosing;
 
             return (
               <div
                 key={step.number}
-                className={`process-item ${isActive ? "process-item--active" : ""}`}
+                className={`${styles.item} ${isActive ? styles.active : ""}`}
               >
                 <button
                   type="button"
-                  className="process-item__trigger"
+                  className={styles.trigger}
                   onClick={() => handleToggle(index)}
                 >
-                  <span className="process-item__title">{step.title}</span>
-                  <span className="process-item__number">{step.number}</span>
+                  <span className={styles.title}>{step.title}</span>
+                  <span className={styles.number}>{step.number}</span>
                 </button>
 
-                <div className="process-item__content">
-                  <div className="process-item__inner">
-                    <div className="process-item__media">
+                <div className={styles.content}>
+                  <div className={styles.inner}>
+                    <div className={styles.media}>
                       {isActive && (
                         <img
                           src={step.image}
                           alt={step.title}
-                          className="process-item__image"
+                          className={styles.image}
                         />
                       )}
                     </div>
 
-                    <div className="process-item__text">
+                    <div className={styles.text}>
                       {step.text.split("\n\n").map((paragraph, paragraphIndex) => (
                         <p key={paragraphIndex}>{paragraph}</p>
                       ))}

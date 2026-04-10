@@ -1,7 +1,7 @@
-.menu1-page {
+.menu1Page {
   position: relative;
   min-height: 1500px;
-  background: url('../assets/Services/pasta.svg') center/cover no-repeat;
+  background: url("../assets/Services/pasta.svg") center/cover no-repeat;
   background-color: #454642;
   font-family: "Montserrat", sans-serif;
   display: flex;
@@ -11,13 +11,13 @@
   box-sizing: border-box;
 }
 
-.menu1-overlay {
+.menu1Overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.074);
 }
 
-.menu1-card {
+.menu1Card {
   position: relative;
   z-index: 2;
   width: 60%;
@@ -29,33 +29,33 @@
   margin-top: 80px;
 }
 
-.menu1-close {
+.menu1Close {
   position: absolute;
   top: 20px;
   right: 20px;
   background: transparent;
   border: none;
-  color: #CFCDC8;
+  color: #cfcdc8;
   font-size: 56px;
   line-height: 1;
   cursor: pointer;
   font-weight: 100;
 }
 
-.menu1-label {
+.menu1Label {
   margin: 0 0 28px 0;
   font-size: 70px;
   font-weight: 900;
   line-height: 1;
-  color: #CFCDC8;
+  color: #cfcdc8;
   text-transform: uppercase;
 }
 
-.menu1-content {
+.menu1Content {
   max-width: 800px;
 }
 
-.menu1-title {
+.menu1Title {
   margin: 0 0 20px 0;
   font-size: 20px;
   margin-top: 60px;
@@ -63,7 +63,7 @@
   color: #ffffff;
 }
 
-.menu1-description {
+.menu1Description {
   margin: 0;
   font-size: 16px;
   font-weight: 300;
@@ -73,94 +73,93 @@
   color: #ffffff;
 }
 
-.menu1-processbox {
+.menu1Processbox {
   width: 100%;
-
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .menu1-card {
+  .menu1Card {
     width: 80%;
     min-height: 1100px;
     padding: 40px 40px 30px 30px;
   }
 
-  .menu1-label {
+  .menu1Label {
     font-size: 56px;
   }
 
-  .menu1-close {
+  .menu1Close {
     font-size: 46px;
   }
 }
 
-/* Mobil */
+/* Mobile */
 @media (max-width: 768px) {
-  .menu1-page {
+  .menu1Page {
     min-height: 100vh;
     padding: 16px;
   }
 
-  .menu1-card {
+  .menu1Card {
     width: 100%;
     min-height: auto;
     margin-top: 20px;
     padding: 24px 20px 30px 20px;
   }
 
-  .menu1-label {
+  .menu1Label {
     font-size: 42px;
     margin-bottom: 20px;
   }
 
-  .menu1-close {
+  .menu1Close {
     top: 14px;
     right: 14px;
     font-size: 38px;
   }
 
-  .menu1-content {
+  .menu1Content {
     max-width: 100%;
   }
 
-  .menu1-title {
+  .menu1Title {
     font-size: 18px;
     margin-top: 30px;
   }
 
-  .menu1-description {
+  .menu1Description {
     font-size: 14px;
     line-height: 1.7;
     margin-top: 16px;
   }
 }
 
-/* Små mobiler */
+/* Small mobile */
 @media (max-width: 480px) {
-  .menu1-page {
+  .menu1Page {
     padding: 12px;
   }
 
-  .menu1-card {
+  .menu1Card {
     padding: 20px 16px 24px 16px;
   }
 
-  .menu1-label {
+  .menu1Label {
     font-size: 34px;
   }
 
-  .menu1-close {
+  .menu1Close {
     font-size: 32px;
     top: 10px;
     right: 10px;
   }
 
-  .menu1-title {
+  .menu1Title {
     font-size: 16px;
   }
 
-  .menu1-description {
+  .menu1Description {
     font-size: 13px;
     line-height: 1.6;
   }

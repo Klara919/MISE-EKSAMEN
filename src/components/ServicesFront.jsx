@@ -1,4 +1,4 @@
-import "./ServicesFront.css";
+import styles from "./ServicesFront.module.css";
 import knifeAndFork from "../assets/Services/knifeandfork.svg";
 import circle1 from "../assets/Services/Scratch.svg";
 import circle2 from "../assets/Services/Customize.svg";
@@ -31,14 +31,14 @@ export default function ServicesMenu() {
   ];
 
   return (
-    <div className="wrapper">
-      <div className="overlay" />
+    <div className={styles.wrapper}>
+      <div className={styles.overlay} />
 
-      <div className="content">
-        <div className="header">
-          <p className="subtitle">Services</p>
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <p className={styles.subtitle}>Services</p>
           <h1>Hvad kan vi gøre for jer?</h1>
-          <p className="intro">
+          <p className={styles.intro}>
             Hos MISE tilbyder vi fleksible løsninger, der tilpasses dine behov.
             Uanset om du ønsker en hjemmeside fra bunden eller videreudvikling
             af en eksisterende, hjælper vi dig med at skabe en løsning
@@ -46,28 +46,28 @@ export default function ServicesMenu() {
           </p>
         </div>
 
-        <div className="grid">
+        <div className={styles.grid}>
           {menuItems.map((item) => (
             <div
               key={item.id}
-              className="menu-card"
+              className={styles.menuCard}
               onClick={() => navigate(item.path)}
               style={{ cursor: "pointer" }}
             >
               <h2>{item.label}</h2>
 
-              <div className="icon-wrapper">
-                <img src={knifeAndFork} alt="" className="cutlery" />
+              <div className={styles.iconWrapper}>
+                <img src={knifeAndFork} alt="" className={styles.cutlery} />
                 <img
                   src={item.circle}
                   alt=""
-                  className="circle rotating-circle"
+                  className={`${styles.circle} ${styles.rotatingCircle}`}
                 />
               </div>
 
               <h3>{item.title}</h3>
-              <p className="desc">{item.description}</p>
-              <p className="price">{item.price}</p>
+              <p className={styles.desc}>{item.description}</p>
+              <p className={styles.price}>{item.price}</p>
             </div>
           ))}
         </div>

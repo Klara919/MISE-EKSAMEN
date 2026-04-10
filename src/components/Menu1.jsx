@@ -1,26 +1,29 @@
-import './Menu1.css';
-import { useNavigate } from 'react-router-dom';
-import ProcessBox from './ProcessBox';
-import WhiteFooter from './WhiteFooter';
+import styles from "./Menu1.module.css";
+import { useNavigate } from "react-router-dom";
+import ProcessBox from "./ProcessBox";
+import WhiteFooter from "./WhiteFooter";
 
 export default function Menu1() {
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="menu1-page">
-        <div className="menu1-overlay"></div>
+      <div className={styles.menu1Page}>
+        <div className={styles.menu1Overlay}></div>
 
-        <div className="menu1-card">
-          <button className="menu1-close" onClick={() => navigate('/Services')}>
+        <div className={styles.menu1Card}>
+          <button
+            className={styles.menu1Close}
+            onClick={() => navigate("/Services")}
+          >
             ×
           </button>
 
-          <h1 className="menu1-label">MENU1</h1>
+          <h1 className={styles.menu1Label}>MENU1</h1>
 
-          <div className="menu1-content">
-            <h2 className="menu1-title">From Scratch</h2>
-            <p className="menu1-description">
+          <div className={styles.menu1Content}>
+            <h2 className={styles.menu1Title}>From Scratch</h2>
+            <p className={styles.menu1Description}>
               Vi udvikler skræddersyede websites fra bunden med fokus på
               performance, enkelhed og effektiv kode. Gennem gennemtænkte
               designvalg og optimerede løsninger skaber vi digitale produkter,
@@ -28,7 +31,7 @@ export default function Menu1() {
             </p>
           </div>
 
-          <div className="menu1-processbox">
+          <div className={styles.menu1Processbox}>
             <ProcessBox />
           </div>
         </div>

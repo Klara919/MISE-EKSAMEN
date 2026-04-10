@@ -1,15 +1,4 @@
-/* GRID */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 360px));
-  justify-content: center;
-  column-gap: 8rem;
-  row-gap: 4rem;
-  width: 100%;
-}
-
-/* CARD */
-.team-card {
+.teamCard {
   width: 100%;
   max-width: 360px;
   display: flex;
@@ -17,8 +6,7 @@
   gap: 1rem;
 }
 
-/* IMAGE AREA */
-.team-card__image-wrapper {
+.teamCardImageWrapper {
   position: relative;
   width: 100%;
   height: 360px;
@@ -26,7 +14,7 @@
   background: #bdbdbd;
 }
 
-.team-card__image {
+.teamCardImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -35,13 +23,12 @@
   transition: transform 220ms ease;
 }
 
-.team-card__image-wrapper:hover .team-card__image,
-.team-card__image-wrapper:focus-within .team-card__image {
+.teamCardImageWrapper:hover .teamCardImage,
+.teamCardImageWrapper:focus-within .teamCardImage {
   transform: scale(1.03);
 }
 
-/* OVERLAY */
-.team-card__overlay {
+.teamCardOverlay {
   position: absolute;
   inset: 0;
   background: rgba(70, 70, 70, 0.72);
@@ -53,16 +40,16 @@
   transition: opacity 220ms ease;
 }
 
-.team-card__image-wrapper:hover .team-card__overlay,
-.team-card__image-wrapper:focus-within .team-card__overlay {
+.teamCardImageWrapper:hover .teamCardOverlay,
+.teamCardImageWrapper:focus-within .teamCardOverlay {
   opacity: 1;
 }
 
-.team-card__quote {
+.teamCardQuote {
   margin-top: 50px;
   width: 100%;
   max-width: 28ch;
-  color: #ffffff !important;
+  color: #ffffff;
   font-size: 12px;
   line-height: 1.55;
   text-align: center;
@@ -73,15 +60,14 @@
   overflow-wrap: break-word;
 }
 
-/* TEXT CONTENT */
-.team-card__content {
+.teamCardContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.35rem;
 }
 
-.team-card__role {
+.teamCardRole {
   margin: 0;
   color: #7a2018;
   font-size: 16px;
@@ -90,7 +76,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.team-card__name {
+.teamCardName {
   margin: 0;
   color: #7a2018;
   font-size: 12px;
@@ -99,14 +85,13 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* ACTIONS */
-.team-card__actions {
+.teamCardActions {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.team-card__icon-link {
+.teamCardIconLink {
   width: 1.9rem;
   height: 1.9rem;
   border: 1px solid #7a2018;
@@ -123,45 +108,37 @@
     border-color 180ms ease;
 }
 
-.team-card__icon-link:hover,
-.team-card__icon-link:focus-visible {
+.teamCardIconLink:hover,
+.teamCardIconLink:focus-visible {
   background: #7a2018;
   color: #f2efe9;
   outline: none;
   transform: translateY(-1px);
 }
 
-.team-card__icon-link--text {
+.teamCardIconLinkText {
   font-size: 0.8rem;
   line-height: 1;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
 }
 
-.team-card__icon {
+.teamCardIcon {
   width: 14px;
   height: 14px;
   display: block;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
-    column-gap: 0;
-    justify-items: center;
-  }
-
-  .team-card {
+  .teamCard {
     max-width: 320px;
   }
 
-  .team-card__image-wrapper {
+  .teamCardImageWrapper {
     height: 320px;
   }
 
-  .team-card__quote {
+  .teamCardQuote {
     max-width: 24ch;
     font-size: 0.95rem;
     color: #ffffff;

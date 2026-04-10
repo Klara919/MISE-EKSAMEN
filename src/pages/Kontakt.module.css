@@ -1,22 +1,23 @@
+/* kontakt.module.css */
 
-.kontakt-page {
+.page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: #cfcdc8;
 }
 
-.kontakt-main {
+.main {
   flex: 1;
 }
 
-.kontakt-section {
+.section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4.5rem 5.5rem 5rem;
 }
 
-.kontakt-eyebrow {
+.eyebrow {
   margin: 0 0 1rem;
   color: #6d1b13;
   font-family: "Montserrat", sans-serif;
@@ -25,7 +26,7 @@
   letter-spacing: 0.18em;
 }
 
-.kontakt-title {
+.title {
   margin: 0 0 2rem;
   color: #6d1b13;
   font-family: "Montserrat", sans-serif;
@@ -35,31 +36,31 @@
   max-width: 25ch;
 }
 
-.kontakt-grid {
+.grid {
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 7rem;
   align-items: start;
 }
 
-.kontakt-media {
+.media {
   margin: 0;
   width: 100%;
 }
 
-.kontakt-image {
+.image {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1.3;
   object-fit: cover;
 }
 
-.kontakt-content {
+.content {
   max-width: 640px;
   padding-top: 0.25rem;
 }
 
-.kontakt-text {
+.text {
   margin: 0 0 2rem;
   color: #6D1B13;
   font-family: "Montserrat", sans-serif;
@@ -69,7 +70,7 @@
   max-width: 45ch;
 }
 
-.kontakt-divider {
+.divider {
   width: 100%;
   max-width: 540px;
   margin: 4rem 0 2rem;
@@ -77,14 +78,14 @@
   border-top: 1px solid rgba(109, 27, 19, 0.45);
 }
 
-.kontakt-details {
+.details {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
   font-style: normal;
 }
 
-.kontakt-link {
+.link {
   color: #6D1B13;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
@@ -93,39 +94,39 @@
   font-weight: 400;
 }
 
-.kontakt-link:hover,
-.kontakt-link:focus-visible {
+.link:hover,
+.link:focus-visible {
   opacity: 0.75;
 }
 
 @media (max-width: 1100px) {
-  .kontakt-section {
+  .section {
     padding: 3rem 2rem 4rem;
   }
 
-  .kontakt-grid {
+  .grid {
     grid-template-columns: 420px 1fr;
     gap: 4rem;
   }
 
-  .kontakt-content {
+  .content {
     max-width: 560px;
   }
 }
 
 @media (max-width: 900px) {
-  .kontakt-section {
+  .section {
     padding: 2rem 1.5rem 3rem;
   }
 
-  .kontakt-grid {
+  .grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .kontakt-content,
-  .kontakt-text,
-  .kontakt-divider {
+  .content,
+  .text,
+  .divider {
     max-width: 100%;
   }
 }

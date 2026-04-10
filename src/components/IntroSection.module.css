@@ -1,0 +1,88 @@
+/* Intro.module.css */
+.intro {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 80px 24px;
+  color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto 50px;
+}
+
+.title {
+  max-width: 700px;
+  margin: 0 0 60px;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.text p {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #6a6a64;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    padding: 100px 48px;
+  }
+
+  .content {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    margin-bottom: 32px;
+    font-size: 25px;
+  }
+
+  .text p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+}

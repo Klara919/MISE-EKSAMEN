@@ -1,5 +1,5 @@
 import React from "react";
-import "./TeamCard.css";
+import styles from "./TeamCard.module.css";
 
 export default function TeamCard({
   image,
@@ -11,27 +11,27 @@ export default function TeamCard({
   email,
 }) {
   return (
-    <article className="team-card">
-      <div className="team-card__image-wrapper">
+    <article className={styles.teamCard}>
+      <div className={styles.teamCardImageWrapper}>
         <img
           src={image}
           alt={imageAlt || name}
-          className="team-card__image"
+          className={styles.teamCardImage}
         />
 
-        <div className="team-card__overlay">
-          <p className="team-card__quote">“{quote}”</p>
+        <div className={styles.teamCardOverlay}>
+          <p className={styles.teamCardQuote}>“{quote}”</p>
         </div>
       </div>
 
-      <div className="team-card__content">
-        <h3 className="team-card__role">{role}</h3>
-        <p className="team-card__name">{name}</p>
+      <div className={styles.teamCardContent}>
+        <h3 className={styles.teamCardRole}>{role}</h3>
+        <p className={styles.teamCardName}>{name}</p>
 
-        <div className="team-card__actions">
+        <div className={styles.teamCardActions}>
           <a
             href={linkedinUrl}
-            className="team-card__icon-link team-card__icon-link--text"
+            className={`${styles.teamCardIconLink} ${styles.teamCardIconLinkText}`}
             target="_blank"
             rel="noreferrer"
             aria-label={`${name} på LinkedIn`}
@@ -41,13 +41,13 @@ export default function TeamCard({
 
           <a
             href={`mailto:${email}`}
-            className="team-card__icon-link"
+            className={styles.teamCardIconLink}
             aria-label={`Send email til ${name}`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              className="team-card__icon"
+              className={styles.teamCardIcon}
               aria-hidden="true"
             >
               <path

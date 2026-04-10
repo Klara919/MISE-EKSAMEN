@@ -1,11 +1,12 @@
+/* WhiteFooter.module.css */
 
-.white-footer {
+.footer {
   margin-top: auto;
   background: #454642;
   color: #ffffff;
 }
 
-.white-footer .footer-inner {
+.inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 64px 0;
@@ -13,14 +14,14 @@
   flex-direction: column;
 }
 
-.white-footer .footer-grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   gap: 22rem;
 }
 
-.white-footer .footer-title {
+.title {
   margin: 0 0 24px;
   font-size: 24px;
   font-weight: 500;
@@ -29,18 +30,18 @@
   color: #ffffff;
 }
 
-.white-footer .footer-list {
+.list {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: left;
 }
 
-.white-footer .footer-list li {
+.list li {
   margin-bottom: 5px;
 }
 
-.white-footer a {
+.link {
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
@@ -49,19 +50,19 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.white-footer .footer-link:hover,
-.white-footer .footer-link:focus-visible {
+.link:hover,
+.link:focus-visible {
   opacity: 0.7;
   color: #ffffff;
 }
 
-.white-footer .footer-brand {
+.brand {
   margin-top: 2rem;
   text-align: center;
   overflow: hidden;
 }
 
-.white-footer .footer-brand span {
+.brand span {
   display: block;
   font-size: clamp(8rem, 30vw, 23rem);
   font-weight: 900;
@@ -71,22 +72,22 @@
   transform: translateY(0.08em);
 }
 
-  @media (max-width: 900px) {
-    .white-footer .footer-grid {
-      grid-template-columns: repeat(3, auto); /* behold 3 kolonner */
-      gap: 2rem; /* mindre gap så det kan være på mobil */
-      justify-content: space-between; /* fordeler dem pænt */
-    }
-  
-    .white-footer .footer-inner {
-      padding: 48px 24px 0;
-    }
-
-    .white-footer .footer-title {
-      font-size: 18px;
-    }
-
-    .white-footer a {
-      font-size: 12px;
-    }
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, auto);
+    gap: 2rem;
+    justify-content: space-between;
   }
+
+  .inner {
+    padding: 48px 24px 0;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .link {
+    font-size: 12px;
+  }
+}

@@ -1,27 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./IntroSection.css";
+import styles from "./IntroSection.module.css";
 import Team from "../assets/Team.jpg";
 
-export default function IntroSection() { // opretter og eksporterer komponenten
-  return ( // det der bliver renderet i DOM
-    <section className="intro"> {/* yderste sektion (wrapper) */}
-      <div className="intro__container"> {/* centreret container med max bredde */}
+export default function IntroSection() {
+  return (
+    <section className={styles.intro}>
+      <div className={styles.container}>
         
-        <h1 className="intro__title"> {/* hovedoverskrift */}
+        <h1 className={styles.title}>
           MiSE er et webbureau i Aarhus, der fokuserer på at udvikle
           ressourceeffektive websites med stærke visuelle designs.
         </h1>
 
-        <div className="intro__content"> {/* wrapper til layout (grid/flex) */}
+        <div className={styles.content}>
 
-          <div className="intro__image"> {/* container til billede */}
-            <img src={Team} alt="Team" /> {/* viser team-billede */}
+          <div className={styles.image}>
+            <img src={Team} alt="Team" />
           </div>
 
-          <div className="intro__text"> {/* container til tekst + knap */}
+          <div className={styles.text}>
             
-            <p> {/* brødtekst */}
+            <p>
               Vi er et passioneret team med en fælles ambition om at skabe
               digitale løsninger, der gør en forskel. Vores fokus på
               bæredygtighed går hånd i hånd med et effektivt website - det er
@@ -29,8 +29,8 @@ export default function IntroSection() { // opretter og eksporterer komponenten
             </p>
 
             <Link 
-              to="/hvem-vi-er" /* hvor linket fører hen */
-              className="intro__button" /* styling som knap */
+              to="/hvem-vi-er"
+              className={styles.button}
             >
               Læs mere om os
             </Link>

@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   min-height: 100vh;
-  background: url('../assets/Services/pasta.svg') center/cover no-repeat;
+  background: url("../assets/Services/pasta.svg") center/cover no-repeat;
   background-color: #454642;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -24,11 +24,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .header {
   grid-column: 2;
   width: 100%;
   max-width: 430px;
-  justify-self: center;   /* samme centrering som kortet */
+  justify-self: center;
   text-align: right;
   margin-bottom: 120px;
 }
@@ -49,56 +50,53 @@
   font-size: 16px;
   line-height: 1.6;
   margin-left: auto;
-  margin-right: -50px; /* Skubber den længere mod højre */
+  margin-right: -50px;
   opacity: 0.8;
 }
 
-
 .grid {
   display: grid;
-  grid-column: 1 / -1;  /* 👈 kortene går over begge kolonner */
+  grid-column: 1 / -1;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   justify-items: center;
-  overflow: visible; /* 👈 vigtigt så hover ikke bliver cuttet */
+  overflow: visible;
 }
 
 /* CARD */
-
-.menu-card {
-  background: #CFCDC8;
+.menuCard {
+  background: #cfcdc8;
   color: #454545;
   width: 100%;
   max-width: 400px;
   height: 620px;
   margin-bottom: 100px;
 
-  position: relative; /* 👈vigtig */
+  position: relative;
   box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.menu-card:hover {
-  transform: scale(1.01); /* zoom */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* dybde */
+
+.menuCard:hover {
+  transform: scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* RESET DEFAULT MARGINS */
-
-.menu-card h2,
-.menu-card h3,
-.menu-card p {
+.menuCard h2,
+.menuCard h3,
+.menuCard p {
   margin: 0;
 }
 
 /* CONTENT */
-
-.menu-card h2 {
+.menuCard h2 {
   font-size: 42px;
   font-weight: 700;
   padding: 20px 30px 30px;
 }
 
-.icon-wrapper {
+.iconWrapper {
   position: relative;
   display: flex;
   justify-content: center;
@@ -120,8 +118,7 @@
 }
 
 /* ANIMATION */
-
-.menu-card:hover .rotating-circle {
+.menuCard:hover .rotatingCircle {
   animation: spin 15s linear infinite;
 }
 
@@ -134,7 +131,7 @@
   }
 }
 
-.menu-card h3 {
+.menuCard h3 {
   font-size: 20px;
   padding: 0 30px;
   margin-bottom: 15px;
@@ -149,40 +146,41 @@
   padding: 0 30px;
 }
 
-/* 🔥 PRIS ALIGNED PERFEKT */
 .price {
-  position: absolute;  /* 👈 key */
-  bottom: 30px;        /* afstand fra bund */
-  left: 30px;          /* afstand fra venstre */
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
 
   font-size: 12px;
   font-weight: 300;
   color: #454545;
 }
+
 /* MOBILE */
 @media (max-width: 768px) {
   .content {
-    grid-template-columns: 1fr; /* 👈 én kolonne */
+    grid-template-columns: 1fr;
   }
 
   .header {
-    grid-column: 1;        /* 👈 fylder hele bredden */
-    max-width: none;       /* 👈 fjerner begrænsning */
+    grid-column: 1;
+    max-width: none;
     width: 100%;
-    justify-self: stretch; /* 👈 fylder hele grid cell */
+    justify-self: stretch;
     text-align: left;
     margin: 20px;
     margin-bottom: 80px;
   }
-.header h1 {
+
+  .header h1 {
     font-size: 28px;
     margin: 10px 0;
     margin-bottom: 20px;
   }
 
   .intro {
-   padding-right: 30px;
-   padding-top: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
   }
 
   .grid {

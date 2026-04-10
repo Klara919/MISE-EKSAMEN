@@ -1,0 +1,53 @@
+.sideBrand {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 100;
+  pointer-events: none;
+
+  color: #6d1b13;
+  transition: color 0.3s ease;
+}
+
+.light {
+  color: #ffffff;
+}
+
+.mise {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 30px;
+  font-family: "Brice", sans-serif;
+  line-height: 1;
+}
+
+.sub {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .sideBrand {
+    right: 12px;
+  }
+
+  .mise {
+    font-size: 22px;
+  }
+
+  .sub {
+    font-size: 12px;
+  }
+}

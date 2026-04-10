@@ -1,5 +1,5 @@
 import React from "react";
-import "./RedFooter.css";
+import styles from "./RedFooter.module.css";
 import { Link } from "react-router-dom";
 
 const contactItems = [
@@ -32,20 +32,20 @@ function FooterColumn({ title, items }) {
     <section aria-labelledby={`footer-${title.toLowerCase()}`}>
       <h2
         id={`footer-${title.toLowerCase()}`}
-        className="footer-title"
+        className={styles.title}
       >
         {title}
       </h2>
 
-      <ul className="footer-list">
+      <ul className={styles.list}>
         {items.map((item) => (
           <li key={item.label}>
             {item.to ? (
-              <Link to={item.to} className="footer-link">
+              <Link to={item.to} className={styles.link}>
                 {item.label}
               </Link>
             ) : (
-              <a href={item.href} className="footer-link">
+              <a href={item.href} className={styles.link}>
                 {item.label}
               </a>
             )}
@@ -58,9 +58,9 @@ function FooterColumn({ title, items }) {
 
 export default function RedFooter() {
   return (
-    <footer className="red-footer">
-      <div className="footer-inner">
-        <nav aria-label="Footer" className="footer-grid">
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <nav aria-label="Footer" className={styles.grid}>
           {columns.map((column) => (
             <FooterColumn
               key={column.title}
@@ -70,7 +70,7 @@ export default function RedFooter() {
           ))}
         </nav>
 
-        <div aria-hidden="true" className="footer-brand">
+        <div aria-hidden="true" className={styles.brand}>
           <span>MiSE</span>
         </div>
       </div>
