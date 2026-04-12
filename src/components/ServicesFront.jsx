@@ -1,8 +1,8 @@
-import styles from "./ServicesFront.module.css";
 import knifeAndFork from "../assets/Services/knifeandfork.svg";
 import circle1 from "../assets/Services/Scratch.svg";
 import circle2 from "../assets/Services/Customize.svg";
 import { useNavigate } from "react-router-dom";
+import styles from "./ServicesFront.module.css";
 
 export default function ServicesMenu() {
   const navigate = useNavigate();
