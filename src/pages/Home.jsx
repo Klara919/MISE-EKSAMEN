@@ -17,8 +17,7 @@ function Home() {
           name="description"
           content="MiSE er et webbureau for restaurationsbranchen, der skaber websites og digitale identiteter med fokus på performance, visuel kvalitet og bevidste digitale valg"
         />
-
-<link rel="icon" type="image/png" href="/favicon.png" />
+      <link rel="icon" type="image/png" href="/public/favicon.png" />
       </Helmet>
 
       <Forside />
