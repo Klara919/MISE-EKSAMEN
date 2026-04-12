@@ -9,8 +9,9 @@
 .processIntro {
   max-width: 1200px;
   margin: 0 auto 42px;
-  padding: 0 48px;
+  padding: 0 50px;
   text-align: left;
+  margin-bottom: -30px;
 }
 
 .processEyebrow {
