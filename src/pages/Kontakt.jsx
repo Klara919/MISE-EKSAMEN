@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./kontakt.module.css";
+import styles from "./Kontakt.module.css";
 import Footer from "../components/RedFooter";
 import kontaktImage from "../assets/bord.svg";
 import { Helmet } from "react-helmet-async";
